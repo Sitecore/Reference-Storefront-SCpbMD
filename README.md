@@ -1,5 +1,5 @@
 # Reference-Storefront-SCpbMD
-Sitecore Reference Storefront Powered By Microsoft Dynamics
+Sitecore Reference Storefront powered by Microsoft Dynamics
 
 Copyright 2015 Sitecore Corporation A/S 
 
