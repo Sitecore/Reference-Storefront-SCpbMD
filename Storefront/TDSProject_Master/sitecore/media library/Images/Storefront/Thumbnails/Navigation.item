@@ -1,0 +1,243 @@
+----item----
+version: 1
+id: {A197DDAC-2D89-42DE-A23E-ED4DD222CA2A}
+database: master
+path: /sitecore/media library/Images/Storefront/Thumbnails/Navigation
+parent: {5287810B-E471-4858-ADF4-1892E6B78478}
+name: Navigation
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1828A2C-7E5D-4BBD-98CA-320474871548}
+templatekey: Image
+
+----field----
+field: {40E50ED9-BA07-4702-992E-A912738D32DC}
+name: Blob
+key: blob
+content-length: 5922
+
+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
+----field----
+field: {22EAC599-F13B-4607-A89D-C091763A467D}
+name: Width
+key: width
+content-length: 4
+
+1179
+----field----
+field: {DE2CA9E4-C117-4C8A-A139-1FF4B199D15A}
+name: Height
+key: height
+content-length: 3
+
+135
+----field----
+field: {C06867FE-9A43-4C7D-B739-48780492D06F}
+name: Extension
+key: extension
+content-length: 3
+
+PNG
+----field----
+field: {6F47A0A5-9C94-4B48-ABEB-42D38DEF6054}
+name: Mime Type
+key: mime type
+content-length: 9
+
+image/png
+----field----
+field: {6954B7C7-2487-423F-8600-436CB3B6DC0E}
+name: Size
+key: size
+content-length: 4
+
+4328
+----field----
+field: {CB09946F-3218-4823-87D2-D5007C199A96}
+name: Dimensions
+key: dimensions
+content-length: 10
+
+1179 x 135
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 61
+
+~/media/A197DDAC2D8942DEA23EED4DD222CA2A.ashx?h=16&thn=1&w=16
+----version----
+language: de-DE
+version: 1
+revision: 7817647f-7d7f-45a6-bb68-c5df78d8dbcf
+
+----field----
+field: {65885C44-8FCD-4A7F-94F1-EE63703FE193}
+name: Alt
+key: alt
+content-length: 10
+
+Navigation
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 34
+
+20141106T102101:635508660618944718
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7817647f-7d7f-45a6-bb68-c5df78d8dbcf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141106T102101:635508660619064718
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----version----
+language: en
+version: 1
+revision: c5cce6d1-2260-42e6-ad79-cf15cb805a68
+
+----field----
+field: {65885C44-8FCD-4A7F-94F1-EE63703FE193}
+name: Alt
+key: alt
+content-length: 10
+
+Navigation
+----field----
+field: {BA8341A1-FF30-47B8-AE6A-F4947E4113F0}
+name: Description
+key: description
+content-length: 10
+
+Navigation
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141106T102101
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5cce6d1-2260-42e6-ad79-cf15cb805a68
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141106T102102:635508660620154757
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

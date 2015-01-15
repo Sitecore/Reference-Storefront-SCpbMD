@@ -1,0 +1,72 @@
+﻿@{
+    var productDetailsLabel = Html.Sitecore().Field("Product Details Label", Html.Sitecore().CurrentItem);
+    var unitPriceLabel = Html.Sitecore().Field("Unit Price Label", Html.Sitecore().CurrentItem);
+    var quantityLabel = Html.Sitecore().Field("Quantity Label", Html.Sitecore().CurrentItem);
+    var totalLabel = Html.Sitecore().Field("Total Label", Html.Sitecore().CurrentItem);
+
+    var enterCouponCodeMessage = Html.Sitecore().Field("Enter Coupon Code Message", Html.Sitecore().CurrentItem);
+    var promoCodeLabel = Html.Sitecore().Field("Promo Code Label", Html.Sitecore().CurrentItem);
+    var promoCodeListLabel = Html.Sitecore().Field("Promo Code List Label", Html.Sitecore().CurrentItem);
+    var addPromoCodeLabel = Html.Sitecore().Field("Add Promo Code Button", Html.Sitecore().CurrentItem);
+    var addingPromoCodeLabel = Html.Sitecore().Field("Adding Promo Code Button", Html.Sitecore().CurrentItem);
+    var removeButtonLabel = Html.Sitecore().Field("Remove Button", Html.Sitecore().CurrentItem);
+}
+
+<div class="wrap-content-checkout" id="cartContainer">
+    <div class="col-md-12" id="cartSection">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="cart-header">
+                        <th class="del-row">&nbsp;</th>
+                        <th class="hidden-sm hidden-xs">&nbsp;</th>
+                        <th>@productDetailsLabel</th>
+                        <th>@unitPriceLabel</th>
+                        <th>@quantityLabel</th>
+                        <th class="text-right">@totalLabel</th>
+                    </tr>
+                </thead>
+
+                <tbody data-bind="foreach: cartlines">
+                    @Html.Partial("~/Views/Storefront/ShoppingCart/_LineItem.cshtml")
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-12" id="promoCodeSection">
+        <div class="form-group"><h4>@enterCouponCodeMessage</h4></div>
+        <div class="col-md-6">
+            <div class="form-group">
+
+                <label for="discountcode_cart">@promoCodeLabel</label>
+                <input type="text" class="form-control" id="discountcode_cart" placeholder="discount code" data-bind="value: promoCode, valueUpdate: 'keyup'">
+            </div>
+            <div class="form-group">
+                <button type="button" class="cart-applydiscount btn btn-success" data-bind="enable: hasPromoCode" data-loading-text="@addingPromoCodeLabel">@addPromoCodeLabel</button>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <tbody data-bind="foreach: adjustments">
+                    <tr>
+                        <td>
+                            <span class="title">@promoCodeListLabel</span><span data-bind="text: description"></span>
+                        </td>
+                        <td style="width: 15%;">
+                            <span class="delete">
+                                <a class="delete-promocode" data-bind="attr: {'data-ajax-promocode': description}"><span class="glyphicon glyphicon-remove"></span> @removeButtonLabel</a>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        @Html.Partial("~/Views/Storefront/ShoppingCart/_CartSummary.cshtml")
+    </div>
+
+    <script type="text/javascript">
+        initShoppingCart();
+    </script>

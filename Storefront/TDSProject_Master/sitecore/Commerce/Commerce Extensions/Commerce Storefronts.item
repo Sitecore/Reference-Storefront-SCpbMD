@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {9642A6EB-34F4-453E-AFCE-9A57ACA28617}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Commerce Storefronts
+parent: {41FA99F0-4A37-48E1-B171-3FC93669E674}
+name: Commerce Storefronts
+master: {00000000-0000-0000-0000-000000000000}
+template: {AE252077-D072-4179-8CE7-BCF563F09F29}
+templatekey: Commerce Extension
+
+----version----
+language: en
+version: 1
+revision: 29e91acf-d73c-40ff-b7aa-53ca72cc8b47
+
+----field----
+field: {50E1E184-56B3-4D2A-91D9-CED4448ED9CC}
+name: Partner
+key: partner
+content-length: 8
+
+Sitecore
+----field----
+field: {FDAB28FA-DED5-4B72-A838-5ECADA478218}
+name: Initialized
+key: initialized
+content-length: 1
+
+1
+----field----
+field: {421CC457-31F6-48C4-AFD1-23C18F78A606}
+name: Enabled
+key: enabled
+content-length: 1
+
+1
+----field----
+field: {C085AB73-050D-4DE9-8206-F5727FFCEC81}
+name: Version
+key: version
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140911T121607
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+29e91acf-d73c-40ff-b7aa-53ca72cc8b47
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140914T020639:635462571995019199
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

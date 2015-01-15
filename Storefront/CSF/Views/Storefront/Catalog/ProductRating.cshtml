@@ -1,0 +1,10 @@
+﻿@model ProductViewModel
+<div id="C09-ProductRating" class="rating">
+    <ul>
+        <li @(Model.CustomerAverageRating >= 1 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+        <li @(Model.CustomerAverageRating >= 2 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+        <li @(Model.CustomerAverageRating >= 3 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+        <li @(Model.CustomerAverageRating >= 4 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+        <li @(Model.CustomerAverageRating >= 5 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+    </ul>
+</div>

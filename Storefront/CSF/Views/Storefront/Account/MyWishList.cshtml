@@ -1,0 +1,92 @@
+﻿@using Sitecore.Commerce.Storefront.Managers
+
+<div class="wrap-main-content">
+    <div id="" class="row">
+        <div class="col-md-12 border-bottom">
+            <h1>
+                @Html.Sitecore().Field("My Wish List Title", Html.Sitecore().CurrentItem)
+                <span class="back-to-myaccount pull-right">
+                    <a href="@StorefrontManager.StorefrontUri("/accountmanagement/mywishlists")">
+                        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @Html.Sitecore().Field("Back To My Wish Lists Label", Html.Sitecore().CurrentItem)
+                    </a>
+                </span>
+            </h1>
+        </div>
+        <div class="col-md-12 border-bottom" id="wishListsSection">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="wishlistChange">@Html.Sitecore().Field("Change Wish List Label", Html.Sitecore().CurrentItem)</label>
+                    <select id="wishlistChange" class="form-control" data-bind="foreach: WishLists" onchange="changeWishList(this)">
+                        <option data-bind="text: Name, attr: {id: ExternalId}, value: ExternalId"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div id="wishListSection">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="cart-header">
+                                <td>
+                                    <input type="checkbox" onclick="selectAllItems(this)" id="selectAllItems">
+                                </td>
+                                <td class="del-row">&nbsp;</td>
+                                <td class="hidden-sm hidden-xs">&nbsp;</td>
+                                <td>@Html.Sitecore().Field("Product Details Label", Html.Sitecore().CurrentItem)</td>
+                                <td>@Html.Sitecore().Field("Unit Price Label", Html.Sitecore().CurrentItem)</td>
+                                <td>@Html.Sitecore().Field("Quantity Label", Html.Sitecore().CurrentItem)</td>
+                                <td class="text-right">@Html.Sitecore().Field("Total Label", Html.Sitecore().CurrentItem)</td>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: Lines">
+                            <tr>
+                                <td class="cart-select">
+                                    <input type="checkbox" class="item-to-selected" onchange="enableAddItemsToCart()" data-bind="attr: { name: ExternalLineId, 'data-productId': ProductId, 'data-variantId': VariantId, 'data-catalog': ProductCatalog }">
+                                </td>
+                                <td class="cart-delete"><a href="#" class="delete-item" data-bind="click: $parent.deleteItem"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
+                                <td class="cart-image hidden-sm hidden-xs">
+                                    <a data-bind="attr: {href: ProductUrl}">
+                                        <img data-bind="attr: {src: Image}" class="img-responsive" alt="a" />
+                                    </a>
+                                </td>
+                                <td class="cart-info">
+                                    <a data-bind="attr: {href: ProductUrl}">
+                                        <h5 data-bind="text: DisplayName"></h5>
+                                    </a>
+                                    <p class="cart-variable" data-bind="visible: Color.length > 0">
+                                        <span>@Html.Sitecore().Field("Color Label", Html.Sitecore().CurrentItem): </span>
+                                        <span data-bind="text: Color"></span>
+                                    </p>
+                                </td>
+                                <td class="cart-price" data-bind="text: LinePrice"></td>
+                                <td class="cart-quantity text-center" style="width: 10%;">
+                                    <input type="number" class="form-control" placeholder="1" data-bind="value: Quantity, attr: { id: ProductId, 'data-variantId': VariantId }" onchange="updateWishListLine(this)">
+                                </td>
+                                <td class="cart-total">
+                                    <p data-bind="text: LineTotal"></p>
+                                    <p data-bind="visible: LineDiscount > 0">
+                                        <span class="savings">@Html.Sitecore().Field("You Save Label", Html.Sitecore().CurrentItem): </span>
+                                        <span class="savings" data-bind="text: LineDiscount"></span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12 border-top">
+                <div class="form-group">
+                    <div class="form-inline">
+                        <button type="button" id="addWishListItemsToCart" class="btn btn-success" disabled="disabled" onclick="addWishListItemsToCart()"><span class="glyphicon glyphicon-shopping-cart"></span> @Html.Sitecore().Field("Add Selected Items To Cart Button", Html.Sitecore().CurrentItem)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    initWishLists("wishListsSection");
+    initWishList("wishListSection");
+</script>

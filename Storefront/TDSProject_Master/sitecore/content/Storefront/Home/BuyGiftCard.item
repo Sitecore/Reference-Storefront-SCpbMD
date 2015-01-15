@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {0F254CC9-55C0-40A3-B881-F81556178EDC}
+database: master
+path: /sitecore/content/Storefront/Home/BuyGiftCard
+parent: {441B60D3-09BB-4111-A3AD-D10076B78B54}
+name: BuyGiftCard
+master: {00000000-0000-0000-0000-000000000000}
+template: {64CA6109-64AB-487F-853F-A406FF3115B6}
+templatekey: Product Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 1507
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{8C308774-5362-4996-A416-527ED85204F1}" s:ds="{9988B682-59C7-4319-8BF9-7071F132A5AD}" /><r uid="{C9CE90EE-35F0-4C50-B97A-E6F66F70A8D7}"><p:d /></r><r uid="{B9581B79-38E2-4E57-AD29-904BB5F7BBF8}" p:before="r[@uid='{CBF8B050-CFD6-4013-83BF-5EF3AAF64682}']" s:id="{E45FD475-ADD0-42A0-A297-ADFE98B47A4A}" s:ph="center" /><r uid="{E21A8939-73BA-4000-939F-2324C1E6339D}"><p:d /></r><r uid="{3B217F90-4061-48A6-BDCF-23A624D69491}"><p:d /></r><r uid="{AF37576F-98E2-41F8-9933-A0DCD43FC219}" p:before="r[@uid='{8C2C1F8D-59F1-4B59-8B17-FC5BE9CF1765}']" s:id="{49424190-0EFA-4414-8D18-4569CC8EA5FD}" s:ph="productrating" /><r uid="{D671C715-DAE0-4EFD-8336-7ACB73E3DE47}"><p:d /></r><r uid="{59246F17-EC96-46F0-A632-BE4671929091}"><p:d /></r><r uid="{A5CD4060-BD7A-47A5-9CE0-AB6CA65F1E39}" p:before="r[@uid='{5CFE4835-5B6D-4782-8DA9-46973D240808}']" s:ds="{02D78BC4-1F9B-462E-A309-B14B0A86D82E}" s:id="{700D7CE2-8F0B-410A-AA29-1683BA6FFC9C}" s:par="" s:ph="productinformation" /><r uid="{5CFE4835-5B6D-4782-8DA9-46973D240808}" p:before="r[@uid='{9B706406-941F-4707-BBB1-A298CC0FEE82}']" s:id="{619FBEF7-DBC4-4F09-9922-F0701BC887E6}" s:ph="addtocart" /><r uid="{FEECD739-F8AC-44BA-A4BA-91F2DA21ECC6}" p:before="r[@uid='{90413A71-AF3B-426B-938F-DCD2F2968374}']" s:ds="" s:id="{7B9B4279-22EC-4274-901F-96B1A5CAB999}" s:par="" s:ph="checkgiftcardbalance" /><r uid="{90413A71-AF3B-426B-938F-DCD2F2968374}" p:before="*[1=2]" /></d></r>
+----version----
+language: en
+version: 1
+revision: c5061124-82d8-4434-987b-e954d0e4229f
+
+----field----
+field: {C25982D9-ECD0-45C0-9E49-2ADE473CCE7C}
+name: Title
+key: title
+content-length: 9
+
+Gift Card
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20141224T143725Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c5061124-82d8-4434-987b-e954d0e4229f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20141229T190920:635554769603510145Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

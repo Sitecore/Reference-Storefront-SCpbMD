@@ -1,0 +1,16 @@
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    int centerWidth = 9;
+    int.TryParse(Model.Rendering.Parameters["Center Width"], out centerWidth);
+    int rightWidth = 12 - centerWidth;
+}
+
+<div id="S03-TwoColumnCenterRight" class="row">
+    <div class="col-md-@centerWidth">
+        @Html.Sitecore().Placeholder("center")
+    </div>
+    <div class="col-md-@rightWidth">
+        @Html.Sitecore().Placeholder("right")
+    </div>
+</div>

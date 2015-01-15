@@ -1,0 +1,56 @@
+﻿@{
+    //Labels
+    var currentPage = Html.Sitecore().CurrentItem.Children["Edit Profile Page"];
+    var firstName = Html.Sitecore().Field("First Name", currentPage);
+    var surname = Html.Sitecore().Field("Surname", currentPage);
+    var email = Html.Sitecore().Field("Email", currentPage);
+    var repeatEmail = Html.Sitecore().Field("Repeat Email", currentPage);
+    var password = Html.Sitecore().Field("Password", currentPage);
+    var repeatPassword = Html.Sitecore().Field("Repeat Password", currentPage);
+    var saveChanges = Html.Sitecore().Field("Save Changes", currentPage);
+    var cancel = Html.Sitecore().Field("Cancel", currentPage);
+    var backtoMyAccount = Html.Sitecore().Field("Back To My Account", currentPage);
+}
+
+<div class="wrap-main-content">
+    <!-- CONTENT CONTAINER -->
+    <div id="" class="row">
+        <div class="col-md-12 border-bottom"><h1><span class="back-to-myaccount pull-right"><a href="javascript:history.go(-1)"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @backtoMyAccount</a></span></h1></div>
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="AccountProfile-FirstName">@firstName <span class="required">*</span></label>
+                    <input type="text" class="form-control" id="AccountProfile-FirstName" placeholder="@firstName">
+                </div>
+                <div class="form-group">
+                    <label for="AccountProfile-Surname">@surname <span class="required">*</span> </label>
+                    <input type="text" class="form-control" id="AccountProfile-Surname" placeholder="@surname">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="AccountProfile-Email">@email <span class="required">*</span> </label>
+                    <input type="text" class="form-control" id="AccountProfile-Email" placeholder="@email">
+                </div>
+                <div class="form-group">
+                    <label for="AccountProfile-EmailRepeat">@repeatEmail <span class="required">*</span> </label>
+                    <input type="text" class="form-control" id="AccountProfile-EmailRepeat" placeholder="@repeatEmail">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="AccountProfile-Password">@password <span class="required">*</span> </label>
+                    <input type="text" class="form-control" id="AccountProfile-Password" placeholder="@password">
+                </div>
+                <div class="form-group">
+                    <label for="AccountProfile-PasswordRepeat">@repeatPassword <span class="required">*</span> </label>
+                    <input type="text" class="form-control" id="AccountProfile-PasswordRepeat" placeholder="@repeatPassword">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 border-top">
+        <button type="button" onclick="location.href='product-list.html'" class="btn btn-primary">@saveChanges</button>
+        <button type="button" onclick="location.href='product-list.html'" class="btn btn-default">@cancel</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="prod-variants-close"></div>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <h2>Check Balance on your gift card</h2>
+    @using (Ajax.BeginForm("CheckGiftCardBalance", "Checkout", null, new AjaxOptions { OnSuccess = "CheckGiftCardBalanceSuccess", OnFailure = "CheckGiftCardBalanceFailure", HttpMethod = "Post" }, new { @id = "CheckGiftCardBalanceForm" }))
+    {
+        @Html.ValidationSummary(true)
+        
+        <div class="input-group giftcard-check">
+            <input type="text" class="form-control" id="GiftCardId" name="GiftCardId" placeholder="Check balance">
+            <span class="input-group-btn">
+                <button id="CheckGiftCardBalanceButton" type="button" class="btn btn-primary" data-loading-text="Checking balance ..." onclick="CheckGiftCardBalance();">Check</button>
+            </span>
+        </div>
+    }
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="balance-value">
+        <h5 id="balance-value"></h5>
+    </div>
+    <div id="balance-errors"></div>
+</div>

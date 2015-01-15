@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {7C9F2CF7-A9B5-4896-9BB0-FE0DB8294A00}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Promotional Displays/Promotion Lists/PromoRotator_Home
+parent: {A728E23D-F357-46C9-AA94-0C7E26CDC7B4}
+name: PromoRotator_Home
+master: {00000000-0000-0000-0000-000000000000}
+template: {1A824314-6577-43DF-B38D-895402A85AB0}
+templatekey: Commerce Promotion Rotator
+
+----field----
+field: {E5685FB3-C44D-464A-932B-B9E073D07AEE}
+name: Promotions
+key: promotions
+content-length: 116
+
+{2633A6B3-2C64-4CCA-A508-6F5F4326C799}|{764C748F-1257-4078-B7F0-42E2934D11C3}|{AEFDBB58-EF30-4101-A945-7525FB1284BA}
+----version----
+language: en
+version: 1
+revision: e0d197e8-8885-426c-ae83-041ad471c525
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140908T165248
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e0d197e8-8885-426c-ae83-041ad471c525
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140908T165747:635457922671135065
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

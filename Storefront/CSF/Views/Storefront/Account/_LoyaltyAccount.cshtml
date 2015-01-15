@@ -1,0 +1,35 @@
+﻿@using Sitecore.Commerce.Storefront.Managers
+<div class="col-md-12">
+    <h2>
+        @Html.Sitecore().Field("Loyalty Title", Html.Sitecore().CurrentItem)
+        <a href="@StorefrontManager.StorefrontUri("/accountmanagement/loyaltycards")" class="view-all pull-right">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> @Html.Sitecore().Field("View Details Label", Html.Sitecore().CurrentItem)
+        </a>
+    </h2>
+    <div id="loyaltySection">
+        <div class="table-responsive" id="loyaltyCards" data-bind="visible: isNotEmpty">
+            <table class="table table-hover small-list">
+                <thead>
+                    <tr>
+                        <td width="90%">@Html.Sitecore().Field("Card Number Label", Html.Sitecore().CurrentItem)</td>
+                        <td width="10%">&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: LoyaltyCards">
+                    <tr data-bind="css: {'odd': $index() % 2 == 0}">
+                        <td><a href="@StorefrontManager.StorefrontUri("/accountmanagement/loyaltycards")" data-bind="text: CardNumber"></a></td>
+                        <td><a href="@StorefrontManager.StorefrontUri("/accountmanagement/loyaltycards")"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="loyaltyCardsEmpty" data-bind="visible: isEmpty">
+            @Html.Sitecore().Field("Loyalty Empty Text", Html.Sitecore().CurrentItem)
+            <button type="button" class="btn btn-primary" id="joinLoyaltyProgram" onclick="joinLoyaltyProgram()">@Html.Sitecore().Field("Join Loyalty Program Button", Html.Sitecore().CurrentItem)</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    initActiveLoyaltyCards("loyaltySection");
+</script>

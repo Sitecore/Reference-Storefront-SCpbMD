@@ -1,0 +1,47 @@
+﻿@model ProductViewModel
+
+@using Sitecore.Commerce.Storefront.Extensions
+@using Sitecore.Commerce.Entities.Inventory
+
+@{
+    string defaultName = Translate.Text(Sitecore.Commerce.Storefront.Texts.NewWishListTip);
+}
+
+<div id="C12-AddToCart" class="add-to-basket">
+    @using (Ajax.BeginForm("AddCartLine", "Cart", null, new AjaxOptions { OnSuccess = "AddToCartSuccess", OnFailure = "AddToCartFailure", HttpMethod = "Post" }, new { @id = "AddToCartForm" }))
+    {
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.ProductId)
+        @Html.Hidden("VariantId", string.Empty);
+        @Html.HiddenFor(m => m.CatalogName)
+        @Html.Hidden("ImageUrl", Model.Images[0].GetImageUrl(50, 50));
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Quantity, new { @class = "control-label" })
+            <div class="controls" id="quantity">
+                @Html.TextBoxFor(model => model.Quantity, new { @type = "number", @class = "form-control", @min = "1", @max = "100", @required = "required", @Value = "1" })
+                @Html.ValidationMessageFor(model => model.Quantity)
+            </div>
+        </div>
+
+        if (Model.StockStatus != null && Equals(Model.StockStatus.Name, StockStatus.OutOfStock.Name))
+        {
+            <button id="AddToCartButton" type="submit" value="@Translate.Text(Sitecore.Commerce.Storefront.Texts.ProductLabelAddToCart)" class="btn disabled" />
+        }
+        else
+        {
+            <button id="AddToCartButton" type="button" class="btn btn-success" data-loading-text="Adding to Cart..." onclick="SubmitAddTo(null);">@Translate.Text(Sitecore.Commerce.Storefront.Texts.ProductLabelAddToCart)</button>
+        }
+    }
+</div>
+
+@if (Model.Variants != null && Model.Variants.Any())
+{
+    <script type="text/javascript">
+        @foreach (var variant in Model.Variants) {
+            @:AddVariantCombination('@variant.Size', '@variant.ProductColor', '@variant.Id');
+        }
+
+        VariantSelectionChanged();
+    </script>
+}

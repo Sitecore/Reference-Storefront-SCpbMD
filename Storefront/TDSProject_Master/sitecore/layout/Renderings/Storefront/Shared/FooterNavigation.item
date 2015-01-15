@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {2658217E-196A-4041-8F81-B8AFA7E377EE}
+database: master
+path: /sitecore/layout/Renderings/Storefront/Shared/FooterNavigation
+parent: {44BD03A4-2010-425F-9D12-6D14940C762A}
+name: FooterNavigation
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 48
+
+/Views/Storefront/Shared/FooterNavigation.cshtml
+----field----
+field: {2E51DF70-D3E4-458C-B03A-95C734DD39E7}
+name: Data source
+key: data source
+content-length: 46
+
+/sitecore/content/Storefront/Global/Site Spots
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 46
+
+/sitecore/content/Storefront/Global/Site Spots
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 70
+
+/sitecore/templates/Storefront/Rendering Datasources/Footer Navigation
+----field----
+field: {C7C26117-DBB1-42B2-AB5E-F7223845CCA3}
+name: __Thumbnail
+key: __thumbnail
+content-length: 58
+
+<image mediaid="{536CD9A2-D641-4497-B005-3014876B67E1}" />
+----version----
+language: en
+version: 1
+revision: 8b3805b1-594a-476a-abcc-31e139c3ce5e
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141009T040636
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8b3805b1-594a-476a-abcc-31e139c3ce5e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141106T102349:635508662294109194
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

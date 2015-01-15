@@ -1,0 +1,41 @@
+﻿@model Sitecore.Commerce.Storefront.Models.Storefront.NavigationViewModel
+
+@if (Model.ChildCategories.Any())
+{
+    <div id="B06-Navigation" class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs-block" href="#">@Model.StoreTitle</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @{
+                    var siteContext = CommerceTypeLoader.CreateInstance<ISiteContext>();
+
+                    var catalogItem = siteContext.CurrentCatalogItem;
+                    var name = string.Empty;
+                    if (catalogItem != null)
+                    {
+                        name = catalogItem.Name;  
+                    }
+                      
+
+                    foreach (var category in Model.ChildCategories)
+                    {
+
+                      var cModel = new CategoryViewModel(category);
+                                         
+                      <li class="@(string.Equals(name, cModel.Name, StringComparison.OrdinalIgnoreCase) ? "active" : "")"><a href="@cModel.GetLink()">@cModel.DisplayName</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div>
+        </div>
+    </div>
+}

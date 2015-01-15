@@ -1,0 +1,57 @@
+﻿<div class="col-md-12"><h1>SELECT DELIVERY OPTIONS BY ITEMS</h1></div>
+<div class="col-md-12" data-bind="debug:$data, foreach: lineItemListViewModel.cartlines">
+    <!-- TODO: Denne skal kopieres for hver varer der er lagt i kurven. -->
+    <!-- TODO: Der skal laves forskellige id´er for hver varer + Kortet (Bing) skal også fikses, så der kan være et for hver vare -->
+    <div class='itemEven accordion-row'>
+        <div class="accordionHeader">
+            <div class="col-md-8">
+                <div class="accordion-toggle">
+                    <img class="img-responsive" alt="a" data-bind="attr:{src:image}" />
+                    <div class="accordion-prod-info">
+                        <h5 data-bind="text:displayName"></h5>
+                        <p>(Color:<span data-bind="text:color"></span>)</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <select class="form-control lineShippingPreference" data-bind="foreach: lineShippingOptions, attr:{id:'lineShippingPreference-'+ externalCartlineId}">
+                    <!-- ko if: $index() == 0 -->
+                    <option value="0">@Html.Sitecore().Field("Delivery Option Label", Html.Sitecore().CurrentItem.Children["Delivery"])</option>
+                    <!-- /ko -->
+                    <!-- ko if: ShippingOptionType.Value != 4 -->
+                    <option data-bind="text:Name, value:ShippingOptionType.Value"></option>
+                    <!-- /ko -->
+                </select>
+                @Html.ValidationMessage("orderShippingPreference")
+            </div>
+        </div>
+
+        <!-- TODO: ACCORDION START -->
+        <div class="accordionContent" data-bind="attr:{id:'AccordionContent-'+ externalCartlineId}" style="display:none;">
+            <div data-bind="attr:{id:'ShippAll-'+ externalCartlineId}" class="col-md-12 ShipOption ShipItem">
+                <!-- TODO: DELIVERY PER ITEM ACCORDION: SHIP ITEM | END -->
+                @Html.Partial("~/Views/Storefront/Checkout/_ByItem_ShipAll.cshtml")
+            </div><!-- TODO: DELIVERY PER ITEM ACCORDION: SHIP ITEM | END -->
+            <div data-bind="attr:{id:'Email-'+ externalCartlineId}" class="col-md-12 ShipOption SendByEmail">
+                <!-- TODO: DELIVERY PER ITEM ACCORDION: SEND BY EMAIL | START -->
+                @Html.Partial("~/Views/Storefront/Checkout/_ByItem_SendByEmail.cshtml")
+            </div><!-- TODO: DELIVERY PER ITEM ACCORDION: SEND BY EMAIL | END -->
+            <div data-bind="attr:{id:'PickStore-'+ externalCartlineId}" class="col-md-12 ShipOption PickUp">
+                <!-- TODO: DELIVERY PER ITEM ACCORDION: PICK UP AT STORE | START -->
+                @Html.Partial("~/Views/Storefront/Checkout/_ByItem_Store.cshtml")
+            </div> <!-- TODO: PICK UP AT STORE | END -->
+            <!-- TODO: Content slut -->
+            <div class="clearfix"></div>
+        </div>
+        <!-- TODO: ACCORDION END -->
+        <div class="col-md-12 accordion-status"><strong>Delivery selected:</strong>
+            <span class="delivery-content" data-bind="attr:{id:'selectedDeliveryLabel-'+ externalCartlineId}">please select delivery first</span>
+        <div class="change-delivery" data-bind="attr:{id:'ChangeDelivery-'+ externalCartlineId}">
+            <div class="openSign"><span class="glyphicon glyphicon-plus-sign"></span> Open delivery info</div> 
+            <div class="closeSign" style="display:none;"><span class="glyphicon glyphicon-minus-sign"></span> Close delivery info</div>
+        </div>
+        </div> <!-- TODO: Denne skal kun vises når kunden har valgt og accepteret delivery -->
+        <div class="clearfix"></div>
+    </div>
+</div>

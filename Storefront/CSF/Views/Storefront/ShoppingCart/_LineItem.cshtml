@@ -1,0 +1,44 @@
+﻿@{
+    var colorLabel = Html.Sitecore().Field("Color Label", Html.Sitecore().CurrentItem);
+    var discountLabel = Html.Sitecore().Field("Discount Label", Html.Sitecore().CurrentItem);
+    var savingsLabel = Html.Sitecore().Field("Savings Label", Html.Sitecore().CurrentItem);
+}
+
+<tr>
+    <td class="cart-delete"><a pid="remove" class="delete-item" data-bind="attr: {'data-ajax-lineitemid': externalCartlineId}"><span class="glyphicon glyphicon-remove-circle"></span></a></td>
+    <td class="cart-image hidden-sm hidden-xs" pid="image">
+        <a data-bind="attr:{'href' : productUrl}"><img class="img-responsive" data-bind="attr: {src: image}" alt="a" /></a>
+    </td>
+
+    <td class="cart-info">
+        <a data-bind="attr:{'href' : productUrl}"><h5 pid="displayName" data-bind="text: displayName"></h5></a>
+        <span class="cart-variable">@colorLabel</span>
+        <span pid="color" data-bind="text: color"></span>
+    </td>
+
+    <td class="cart-price">
+        <dl>
+            <dt>
+                <span pid="price" data-bind="text: linePrice"></span>
+            </dt>
+            <dt data-bind="visible: shouldShowDiscountOffers">
+                <span>@discountLabel</span>
+                <span pid="discountLabel" data-bind="text: discountOfferNames"></span>
+            </dt>
+        </dl>
+    </td>
+    <td class="cart-quantity text-center" style="width: 10%;">
+        <input pid="quantity" type="number" class="form-control form-control-quantity" placeholder="1" data-bind="attr: {value: quantity, 'data-ajax-lineitemid': externalCartlineId}">
+    </td>
+    <td class="cart-total">
+        <dl>
+            <dt>
+                <span pid="total" data-bind="text: lineTotal"></span>
+            </dt>
+            <dt data-bind="visible: shouldShowSavings">
+                <span>@savingsLabel </span>
+                <span pid="discount" data-bind="text: lineItemDiscount"></span>
+            </dt>
+        </dl>
+    </td>
+</tr>

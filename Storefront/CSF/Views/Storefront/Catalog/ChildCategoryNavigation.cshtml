@@ -1,0 +1,28 @@
+﻿@model Sitecore.Commerce.Storefront.Models.Storefront.NavigationViewModel
+@{
+    var siteContext = CommerceTypeLoader.CreateInstance<ISiteContext>();
+}
+
+@if (Model.ChildCategories.Any())
+{
+        var name = string.Empty;
+        var catalogItem = siteContext.CurrentCatalogItem;
+        if (catalogItem != null)
+        {
+            name = catalogItem.Name;
+        }
+
+        <div id="CategoryNavigation" class="category-nav-container">
+        <h5>Categories</h5>
+        <div class="@siteContext.CurrentCatalogItem.DisplayName.Replace(" ", "").ToLower()-list">
+            <ul class="@siteContext.CurrentCatalogItem.DisplayName.ToLower()">
+                @foreach (var category in Model.ChildCategories)
+                {
+                    var cModel = new CategoryViewModel(category);
+
+                    <li class="@(string.Equals(name, cModel.Name, StringComparison.OrdinalIgnoreCase) ? "active" : "")"><a href="@cModel.GetLink()">@category.DisplayName</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+}

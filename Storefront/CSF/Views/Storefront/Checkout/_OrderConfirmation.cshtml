@@ -1,0 +1,32 @@
+﻿    <div id="orderConfirmationContainer" class="wrap-main-content">
+            <div id="##" class="wrap-content-title-text">
+                <div class="col-md-6" id="printConfirmationArea">
+                    <h1>@Html.Sitecore().Field("Title", Html.Sitecore().CurrentItem)</h1>
+                    <p>@Html.Sitecore().Field("Email Notification Message Label", Html.Sitecore().CurrentItem)</p>
+                    <h3>@Html.Sitecore().Field("Order Information Label", Html.Sitecore().CurrentItem.Children["Order Confirmation"]):</h3>
+                    <p class="order-number">@Html.Sitecore().Field("Confirmation Number Label", Html.Sitecore().CurrentItem.Children["Order Confirmation"]): <span data-bind="text:ConfirmationNumber"></span></p>
+                    <p class="order-status">@Html.Sitecore().Field("Status Label", Html.Sitecore().CurrentItem.Children["Order Confirmation"]): <span>Processing</span></p>
+                    <p>@Html.Sitecore().Field("Email Sent Message", Html.Sitecore().CurrentItem.Children["Order Confirmation"])</p>
+                    <span class="receipt-button"><a href="#" id="printButton"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
+                        @Html.Sitecore().Field("Print Receipt Label", Html.Sitecore().CurrentItem.Children["Order Confirmation"])</a></span>
+                    <span class="receipt-button"><a href="#"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
+                        @Html.Sitecore().Field("Update Preferences Label", Html.Sitecore().CurrentItem.Children["Order Confirmation"])</a></span>
+                </div>
+                <div class="col-md-6 spot-single-image"><img src="http://placehold.it/550x330" class="img-responsive" alt="a" /></div>
+            </div>
+    </div>
+<script type="text/javascript">
+    var confirmationViewModel = {
+        ConfirmationNumber: getUrlVars()["confirmationId"]
+    }
+
+    ko.applyBindings(confirmationViewModel);
+
+    $("#printButton").click(function () {
+        w = window.open();
+        w.document.write($('#printConfirmationArea').html());
+        w.print();
+        w.close();
+    });
+</script>
+

@@ -1,0 +1,76 @@
+﻿@model ProductViewModel
+
+<div id="C11-ProductInformation">
+    <div class="col-md-12 col-xs-12"><h1>@Model.DisplayNameRender</h1></div>
+    <div class="col-md-12 col-xs-12"><p>@Html.Sitecore().Field("Item number", Model.Rendering.RenderingItem) @Model.RenderField("ItemNumber")</p></div>
+    <div class="col-md-12 col-xs-12">
+        <div class="description">
+            <h6>@Html.Sitecore().Field("Description", Model.Rendering.RenderingItem)</h6>
+            <p>@Model.DescriptionRender</p>
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12">
+        <div class="features">
+            @Model.RenderField("Features")
+            @*<h6>Featues:</h6>
+                <ul>
+                    <li>Microfleece lined hood</li>
+                    <li>Fold over hands and feet</li>
+                    <li>Imported</li>
+                    <li>Zip out fleece Interchange bunting liner</li>
+                    <li>100% polyester MTR filament fleece</li>
+                </ul>*@
+        </div>
+    </div>
+    @if (Model.IsOnSale)
+    {
+        <div class="col-md-12 col-xs-12"><h3 class="price-now">@Html.DisplayFor(model => Model.AdjustedPrice) <span class="savings">@Html.Sitecore().Field("Save procent lead", Model.Rendering.RenderingItem) @Model.SavingsPercentage%</span></h3></div>
+        <div class="col-md-12 col-xs-12"><h4 class="price-before">@Html.DisplayFor(model => Model.ListPrice)</h4></div>
+    }
+    else
+    {
+        <div class="col-md-12 col-xs-12"><h3 class="price-now">@Html.DisplayFor(model => Model.ListPrice)</h3></div>
+    }
+    <div class="col-md-6 col-sm-6 col-xs-12">
+
+        @if (Model.Variants != null && Model.Variants.Count > 0)
+        {
+            var colors = Model.Variants.Where(variant => !string.IsNullOrWhiteSpace(variant.ProductColor)).Distinct(new VariantPropertiesEqualityComparer(VariantPropertiesComparisonProperty.ProductColor));
+            if (colors.Any())
+            {
+                <div class="color">
+                    <label for="variantColour">@Html.Sitecore().Field("Color", Model.Rendering.RenderingItem)</label>
+                    <select class="form-control" name="Variant_Color" id="variantColour" onchange="VariantSelectionChanged()">
+                        @foreach (var color in colors)
+                        {
+                            <option value="@color.ProductColor">@color.ProductColor</option>
+                        }
+                    </select>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        @if (Model.Variants != null && Model.Variants.Count > 0)
+        {
+            var sizes = Model.Variants.Where(variant => !string.IsNullOrWhiteSpace(variant.Size)).Distinct(new VariantPropertiesEqualityComparer(VariantPropertiesComparisonProperty.Size));
+
+            if (sizes.Any() && sizes.All(s => !string.IsNullOrEmpty(s.Size)))
+            {
+                <div class="size">
+                    <label for="variantSize">@Html.Sitecore().Field("Size", Model.Rendering.RenderingItem)</label>
+                    <select class="form-control" name="Variant_Size" id="variantSize" onchange="VariantSelectionChanged()">
+                        @foreach (var size in sizes)
+                        {
+                            <option value="@size.Size">@size.Size</option>
+                        }
+
+                    </select>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="prod-variants-close"></div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {BDBCE41E-1ACF-4606-AA5C-57AEAD016AF5}
+database: master
+path: /sitecore/content/Storefront/Home/Company/About Storefront
+parent: {9C6FF190-CB49-42F1-9F16-FD5D97D8FD69}
+name: About Storefront
+master: {00000000-0000-0000-0000-000000000000}
+template: {16E859D2-6542-407A-AC65-F34BCAD3EB3D}
+templatekey: Standard Page
+
+----version----
+language: en
+version: 1
+revision: b6b7aaf3-99cf-4789-8db7-939e09d5fddd
+
+----field----
+field: {C25982D9-ECD0-45C0-9E49-2ADE473CCE7C}
+name: Title
+key: title
+content-length: 16
+
+About Storefront
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141117T070154
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b6b7aaf3-99cf-4789-8db7-939e09d5fddd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141117T070154:635518045145818516
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

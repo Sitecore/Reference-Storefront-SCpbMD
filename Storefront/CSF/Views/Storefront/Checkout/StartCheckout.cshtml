@@ -1,0 +1,40 @@
+﻿@using Sitecore.Commerce.Storefront.Models.Storefront;
+@model CartRenderingModel
+@{
+    if (Model == null)
+    {
+        return;
+    }
+
+    var showShipping = ViewBag.ShowShipping ?? false;
+    var showPayment = ViewBag.ShowPayment ?? false;
+    var hidePayment = !showPayment ? "class=hide" : "";
+    var hideShipping = !showShipping ? "class=hide" : "";
+    var hideReview = showShipping || showPayment ? "class=hide" : "";
+}
+
+<div id="checkoutContainer" class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.Sitecore().FormHandler()
+
+        @Html.ValidationSummary(true)
+
+        <div id="shippingStep">
+            @Html.Partial("~/Views/Storefront/Checkout/_Delivery.cshtml")
+        </div>
+
+        <div id="billingStep" style="display:none;">
+            @Html.Partial("~/Views/Storefront/Checkout/_Billing.cshtml")
+        </div>
+
+        <div id="reviewStep" style="display:none;">
+        @Html.Partial("~/Views/Storefront/Checkout/_Confirm.cshtml")
+         </div>
+    }
+
+    <script type="text/javascript">
+        initCheckoutData();
+    </script>
+</div>

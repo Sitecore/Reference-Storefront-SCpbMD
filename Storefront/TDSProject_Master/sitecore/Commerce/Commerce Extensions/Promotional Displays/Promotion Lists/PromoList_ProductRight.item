@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {2821D5A7-852A-4B25-AA23-63A77189E27C}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Promotional Displays/Promotion Lists/PromoList_ProductRight
+parent: {A728E23D-F357-46C9-AA94-0C7E26CDC7B4}
+name: PromoList_ProductRight
+master: {00000000-0000-0000-0000-000000000000}
+template: {ED5FE114-0019-47C7-8890-842CE44ED2A3}
+templatekey: Commerce Promotion List
+
+----field----
+field: {E5685FB3-C44D-464A-932B-B9E073D07AEE}
+name: Promotions
+key: promotions
+content-length: 77
+
+{A799CD08-8D02-4EAE-B5D5-A310589B20FE}|{4E1F08E2-5D52-4139-89AF-FF4400E4C0CD}
+----field----
+field: {FFA01EE5-B0EE-4D96-AB92-CACDEAF41434}
+name: Width
+key: width
+content-length: 3
+
+265
+----field----
+field: {EB249097-EFAE-4013-A9D5-D2BCFEA7CBC5}
+name: Height
+key: height
+content-length: 3
+
+240
+----field----
+field: {78FFA9E9-762F-4690-9411-FDA94F2ADE92}
+name: Item Width
+key: item width
+content-length: 3
+
+240
+----field----
+field: {C51D91DB-E6B2-4F6E-9E87-71A7E6AE7034}
+name: Item Height
+key: item height
+content-length: 3
+
+220
+----version----
+language: en
+version: 1
+revision: fb4cb045-c9b0-45b3-9179-d58b9ffad2f2
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140908T171323
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+fb4cb045-c9b0-45b3-9179-d58b9ffad2f2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140908T171435:635457932756399976
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

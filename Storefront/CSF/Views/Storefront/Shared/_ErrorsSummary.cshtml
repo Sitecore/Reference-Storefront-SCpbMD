@@ -1,0 +1,13 @@
+﻿@{
+    var errorsList = ViewBag.Errors as List<string>;
+}
+
+<div id="errorsSummary" class="validation-summary-errors">
+    @if (errorsList != null)
+    {
+        foreach (var error in errorsList)
+        {
+            <p class="text-error">@error</p>
+        }
+    }
+</div>

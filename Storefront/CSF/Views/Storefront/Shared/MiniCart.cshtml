@@ -1,0 +1,45 @@
+﻿
+@using Sitecore.Commerce.Storefront.Managers;
+@using Sitecore.Commerce.Storefront.Models.Storefront;
+@model CartRenderingModel
+
+@{ 
+    decimal subTotal = (Model.Cart.Total as CommerceTotal) == null ? 0 : (Model.Cart.Total as CommerceTotal).Subtotal;
+}
+
+<div id="B02-Basket" class="basket">
+    <div class="amount">
+        <a href="@StorefrontManager.StorefrontUri("/ShoppingCart")" class="toggle-cart">
+            
+            <strong id="miniCartItemCount" data-bind="text: lineitemcount">
+            </strong>
+            @Html.Sitecore().Field("Title", Model.Rendering.RenderingItem)
+        </a>
+    </div>
+    <div class="checkout"><button type="button" id="rsf-btn-checkout" onclick="window.location.href='@StorefrontManager.StorefrontUri("/Checkout")'" class="btn btn-info">@Html.Sitecore().Field("CheckoutLabel", Model.Rendering.RenderingItem)</button></div>
+    <div class="minicart hide-cart hidden-sm hidden-xs">
+        <div class="minicart-content" data-bind="foreach: miniCartItems, visible:miniCartItems().length">
+            <div class="minicart-item" data-bind="attr: {'data-ajax-lineitemid': externalCartlineId}">
+                <img class="img-responsive" alt="a" data-bind="attr:{src: image, alt: displayName}">
+                <div class="minicart-info">
+                    <h5><a style="display: inline-block;width: 200px;" data-bind="text: displayName, attr:{ href:productUrl}"></a></h5>
+                    <p>@Html.Sitecore().Field("Quantity", Model.Rendering.RenderingItem) <strong data-bind="text: quantity"></strong></p>
+                    <p>@Html.Sitecore().Field("Price", Model.Rendering.RenderingItem) <strong data-bind="text: linePrice"></strong></p>
+                </div>
+                <span class="minicart-delete">
+                    <a href="#"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+            <div class="minicart-itemspacer"></div>
+        </div>
+        <div class="minicart-footer">
+        <a class="btn btn-primary" href="@StorefrontManager.StorefrontUri("/ShoppingCart")">@Html.Sitecore().Field("ViewCartLabel", Model.Rendering.RenderingItem)</a>
+        <span class="minicart-total">@Html.Sitecore().Field("Total", Model.Rendering.RenderingItem) <span data-bind="text: total"></span></span>
+        </div>
+    </div>      
+</div>
+
+<script type="text/javascript"> 
+    initMiniShoppingCart("B02-Basket");
+</script>

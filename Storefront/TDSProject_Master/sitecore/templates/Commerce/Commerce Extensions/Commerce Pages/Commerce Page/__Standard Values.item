@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {B92827C5-DB45-4223-8AB2-B61CC0C4B1ED}
+database: master
+path: /sitecore/templates/Commerce/Commerce Extensions/Commerce Pages/Commerce Page/__Standard Values
+parent: {852B3A57-9F26-46C2-A986-2BDDB934DF5E}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {852B3A57-9F26-46C2-A986-2BDDB934DF5E}
+templatekey: Commerce Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 311
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{0D62B8AF-6C41-4573-B246-ABEAD41A0B19}"><r ds="{17727470-702D-5476-866C-EE66B46FD29A}" id="{943A7D19-5380-4854-9A60-9E2290205191}" par="" ph="TopNavigation" uid="{4654BADB-2FDF-430C-9AAB-DC138A4A5AF7}" /></d></r>
+----version----
+language: en
+version: 1
+revision: 2efa9cbd-565e-43d5-842d-a9cafb40426b
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140916T144128
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2efa9cbd-565e-43d5-842d-a9cafb40426b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140916T164503:635464827032622625
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

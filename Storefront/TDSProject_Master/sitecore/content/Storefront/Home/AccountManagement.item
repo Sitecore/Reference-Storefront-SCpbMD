@@ -1,0 +1,248 @@
+----item----
+version: 1
+id: {4D316BBA-345F-4929-9E84-A2208C0F7AA6}
+database: master
+path: /sitecore/content/Storefront/Home/AccountManagement
+parent: {441B60D3-09BB-4111-A3AD-D10076B78B54}
+name: AccountManagement
+master: {00000000-0000-0000-0000-000000000000}
+template: {BA2BE451-96A9-42AE-B170-4D265C127E39}
+templatekey: AccountManagement Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 1838
+
+<r>
+  <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{F5034347-7E92-41D7-B8EB-F51D1F1BCF1C}">
+    <r id="{15A09072-CE89-4126-A9E4-17753FC726FF}" ph="top" uid="{0E2D603A-CF36-4EE2-B598-D2E06AEBD5AE}" />
+    <r id="{B6C0593E-1C35-4C61-8DB5-E7C7AA19D955}" ph="topleft" uid="{17F64DAC-2A2C-4F61-A993-F3BC59203AA0}" />
+    <r id="{FAA386D8-192F-4762-839D-D637BD11549F}" ph="topright" uid="{1B0865BA-8725-40D7-B472-5466055F1834}" />
+    <r ds="{9988B682-59C7-4319-8BF9-7071F132A5AD}" id="{9AA8E388-A6BD-46E1-A73B-DDEF601DE6F8}" ph="topcenter" uid="{8C308774-5362-4996-A416-527ED85204F1}" />
+    <r id="{79167FB2-C7E0-4124-81C9-61AFBB279388}" ph="navigation" uid="{1A6AE860-A323-460D-B8D7-CEFA22469672}" />
+    <r id="{0FA59DDC-5AEB-4ADB-B64B-D8D03B351680}" ph="navigationextra" uid="{D0FFD21B-BDDF-4C59-A150-C43C76CABF37}" />
+    <r ds="{98CE979E-638E-4EE0-AD7F-05164173F1C1}" id="{DC1B9040-8694-456A-A5E6-81996BD1B2AA}" ph="navigationextraleft" uid="{5D2C83EE-F8CA-41B9-BBF2-03CBC74D3F52}" />
+    <r ds="{5886D851-1625-48AE-A787-84FC5B5EB271}" id="{582FEA78-404C-44D8-B6B4-356B080F5A7C}" ph="navigationextraright" uid="{0D3D37F8-ED81-4F72-B7C2-8D5AF8EB0094}" />
+    <r ds="{889A6934-BCDC-4294-94B7-6D141E7312B4}" id="{CFD437A6-404A-4C8C-8A41-EED2FB86D5DE}" ph="navigationmain" uid="{3C2F52A6-A439-456D-A812-04A831DB8A0F}" />
+    <r id="{A093583B-6870-44AD-B14E-54703B32E9B9}" ph="middle" uid="{F720367A-12C1-4818-887C-EB6B70A32640}" />
+    <r id="{2685E523-5828-4F75-9B4E-476EFE1DC2DC}" ph="center" uid="{977A116E-E4E3-4322-8917-267068421DA1}" />
+    <r id="{87C089CC-C0B6-479D-9876-05D77CF6B42F}" ph="center" uid="{639D9A0A-7118-4322-A0A5-4367C409C589}" />
+    <r ds="{F6504124-F766-43D0-824B-EB339CAE8E5F}" id="{2658217E-196A-4041-8F81-B8AFA7E377EE}" ph="bottom" uid="{7208E256-3895-45C7-8141-F4D4A14265F8}" />
+  </d>
+</r>
+----version----
+language: en
+version: 1
+revision: adf48682-629e-4263-b007-e9dd1474ab40
+
+----field----
+field: {C25982D9-ECD0-45C0-9E49-2ADE473CCE7C}
+name: Title
+key: title
+content-length: 10
+
+My Account
+----field----
+field: {3B669CE1-FB96-4CA5-BF57-8F958DABCF7B}
+name: Date Label
+key: date label
+content-length: 5
+
+Date:
+----field----
+field: {EE964941-5302-4603-B24F-0437CEB488FA}
+name: Order Number Label
+key: order number label
+content-length: 13
+
+Order number:
+----field----
+field: {39033A36-1D97-43B0-A7E6-199D0F436C88}
+name: Status Label
+key: status label
+content-length: 7
+
+Status:
+----field----
+field: {30F5A63A-4816-45C0-8491-D962DA29CDF5}
+name: Profile Label
+key: profile label
+content-length: 8
+
+Profile:
+----field----
+field: {20D39BB7-A9C3-4AF4-89F6-32FDBDE25666}
+name: Name Label
+key: name label
+content-length: 5
+
+Name:
+----field----
+field: {85ECC994-FE65-4E56-80C4-4D4D59647691}
+name: Address Label
+key: address label
+content-length: 8
+
+Address:
+----field----
+field: {5236DAD4-702D-4CEE-888F-51E7953A89CE}
+name: Card Number Label
+key: card number label
+content-length: 12
+
+Card number:
+----field----
+field: {4FDED9AC-57F7-493C-9902-2F0ED5E1CD37}
+name: View All Orders Label
+key: view all orders label
+content-length: 15
+
+View all orders
+----field----
+field: {82A3D299-A37D-46FC-9ACA-289FCA0F4C6B}
+name: Add New Address Label
+key: add new address label
+content-length: 17
+
+Add a new address
+----field----
+field: {674E521C-D5E6-4EB7-BE33-8724E688766E}
+name: View All Label
+key: view all label
+content-length: 8
+
+View all
+----field----
+field: {F82B1DBA-709B-4106-9634-65365E9B1749}
+name: View Details Label
+key: view details label
+content-length: 12
+
+View details
+----field----
+field: {42074D5D-2228-4EA0-B621-5C7F852EE4E6}
+name: Primary Address Label
+key: primary address label
+content-length: 7
+
+Primary
+----field----
+field: {BCB8BFEE-F776-449B-907D-EDB7CFC29108}
+name: Reset Password Label
+key: reset password label
+content-length: 19
+
+Reset your password
+----field----
+field: {1CDCBA80-CDA3-4996-88AE-20F49807B25C}
+name: Orders Title
+key: orders title
+content-length: 13
+
+Recent orders
+----field----
+field: {62788F20-BADD-4A38-8EDC-3B23C786D2C9}
+name: Account Profile Title
+key: account profile title
+content-length: 15
+
+Account profile
+----field----
+field: {AEF06D94-A267-429F-9FF1-157BE7410D13}
+name: WishList Title
+key: wishlist title
+content-length: 12
+
+My wish list
+----field----
+field: {19666030-1D0E-4423-A7F6-8452C8C244F1}
+name: Address Book Title
+key: address book title
+content-length: 12
+
+Address book
+----field----
+field: {FC33E2CE-B900-4603-B406-1748E5FD07E9}
+name: Loyalty Title
+key: loyalty title
+content-length: 15
+
+Loyalty account
+----field----
+field: {03D294BC-6503-4239-B1F3-F13C0E87D705}
+name: Order Table Text
+key: order table text
+content-length: 109
+
+<p>Orders placed within the last 30 days are shown below.</p>
+<p>For a full list click "View all orders"</p>
+
+----field----
+field: {1B2E5B5E-251F-4E3C-8288-432E4902E52B}
+name: Account Profile Text
+key: account profile text
+content-length: 34
+
+        <p>Small message here</p>
+
+----field----
+field: {F1F07E2D-E278-44D9-8426-BC4595E297E6}
+name: WishList Empty Text
+key: wishlist empty text
+content-length: 194
+
+<p>You have not created any wish lists yet.</p>
+<p>Make a wish list to keep track of the tings you really want</p>
+<p>Make it public if you want to share your wishes with family and friends</p>
+
+----field----
+field: {4CFFC76A-61CC-420C-9E58-40CAFF8D0ED3}
+name: Loyalty Empty Text
+key: loyalty empty text
+content-length: 71
+
+<p>Get started on the path to the Gold level and start saving today</p>
+----field----
+field: {4CBE2BB0-D74C-451D-9444-FD1AEF7490C8}
+name: Create New Wishlist Button
+key: create new wishlist button
+content-length: 20
+
+Create new wish list
+----field----
+field: {2E90D854-47D3-4485-9C77-13F60CBC8F2C}
+name: Join Loyalty Program Button
+key: join loyalty program button
+content-length: 8
+
+Join now
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20141218T070323Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+adf48682-629e-4263-b007-e9dd1474ab40
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20150111T160601:635565891619776291Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

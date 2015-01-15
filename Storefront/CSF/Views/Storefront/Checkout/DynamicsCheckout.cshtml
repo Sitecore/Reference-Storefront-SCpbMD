@@ -1,0 +1,52 @@
+﻿
+@using Microsoft.Dynamics.Retail.Ecommerce.Sdk.Controls
+@using Sitecore.Commerce.Storefront.Managers
+
+@{
+    Layout = null;
+    var confirmPageUrl = StorefrontManager.StorefrontUri("checkout/Order Confirmation");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Checkout</title>
+
+    @Scripts.Render("~/styles/checkout")
+    
+    @Html.CheckoutControlHeader(confirmPageUrl, false, false)
+</head>
+<body>
+    <a class="msax-PaddingRight5" href="@StorefrontManager.StorefrontHome">@Translate.Text(Sitecore.Commerce.Storefront.Texts.CartButtonContinue)</a>
+    <script type="text/javascript">
+        window.onload = function (e) {
+            function WaitToUpdate() {
+                if (jQuery.active > 0) {
+                    setTimeout(WaitToUpdate, 100);
+                } else {
+                    UpdateMiniCart(true);
+                }
+            };
+
+            var f1 = Microsoft.Dynamics.Retail.Ecommerce.Sdk.Controls.ShoppingCartService.UpdateQuantity;
+            var f2 = Microsoft.Dynamics.Retail.Ecommerce.Sdk.Controls.ShoppingCartService.RemoveFromCart;
+
+            Microsoft.Dynamics.Retail.Ecommerce.Sdk.Controls.ShoppingCartService.UpdateQuantity = function (event, data) {
+                var asyncResult = f1.apply(this, arguments);
+                WaitToUpdate();
+                return asyncResult; 
+            };
+
+            Microsoft.Dynamics.Retail.Ecommerce.Sdk.Controls.ShoppingCartService.RemoveFromCart = function (event, data) {
+                var asyncResult = f2.apply(this, arguments);
+                WaitToUpdate();
+                return asyncResult;
+            };
+        }
+    </script>
+
+    @Html.CheckoutControl(false)
+</body>
+</html>

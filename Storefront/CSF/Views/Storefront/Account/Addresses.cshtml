@@ -1,0 +1,73 @@
+﻿@using Sitecore.Commerce.Storefront.Managers
+@{
+    var savingLabel = @Html.Sitecore().Field("Saving Label", Html.Sitecore().CurrentItem);
+    var deletingLabel = @Html.Sitecore().Field("Deleting Label", Html.Sitecore().CurrentItem);
+    var selectLabel = @Html.Sitecore().Field("Select Label", Html.Sitecore().CurrentItem);
+    var newAddresLabel = @Html.Sitecore().Field("New Address Label", Html.Sitecore().CurrentItem);
+}
+
+<div class="wrap-main-content" id="addressesSection">
+    <div class="row">
+        <div class="col-md-12 border-bottom">
+            <h1>
+                @Html.Sitecore().Field("Address Book Title", Html.Sitecore().CurrentItem)
+                <span class="back-to-myaccount pull-right">
+                    <a href="@StorefrontManager.StorefrontUri("/accountmanagement")">
+                        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @Html.Sitecore().Field("Back To My Account Label", Html.Sitecore().CurrentItem)
+                    </a>
+                </span>
+            </h1>
+        </div>
+        <div class="col-md-12 border-bottom">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressBookChange">@Html.Sitecore().Field("Change Address Label", Html.Sitecore().CurrentItem)</label>
+                    <select id="addressBookChange" class="form-control" data-bind='options: Addresses(), optionsValue : "ExternalId", optionsText: "FullAddress", optionsCaption: "@newAddresLabel", value: selectedAddress'></select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" data-bind="with: address">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressBook-Address">@Html.Sitecore().Field("Address Label", Html.Sitecore().CurrentItem)<span class="required">*</span></label>
+                    <input type="text" class="form-control" id="addressBook-Address" placeholder="@Html.Sitecore().Field("Address Label", Html.Sitecore().CurrentItem)" data-bind="text: Address1, value: Address1" required>
+                </div>
+                <div class="form-group">
+                    <label for="addressBook-City">@Html.Sitecore().Field("City Label", Html.Sitecore().CurrentItem)<span class="required">*</span></label>
+                    <input type="text" class="form-control" id="addressBook-City" placeholder="@Html.Sitecore().Field("City Label", Html.Sitecore().CurrentItem)" data-bind="text: City, value: City" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressBook-Country">@Html.Sitecore().Field("Country Label", Html.Sitecore().CurrentItem) <span class="required">*</span></label>
+                    <select id="addressBook-Country" class="form-control" data-bind='options: $root.countries(), optionsValue: "code", optionsText: "name", optionsCaption: "@selectLabel", value: Country' required></select>
+                </div>
+                <div class="form-group">
+                    <label for="addressBook-State">@Html.Sitecore().Field("State Label", Html.Sitecore().CurrentItem)<span class="required">*</span></label>
+                    @*<select id="addressBook-State" class="form-control" data-bind='options: states(), optionsValue: "code", optionsText: "name", value: State'></select>*@
+                    <input type="text" class="form-control" id="addressBook-State" placeholder="@Html.Sitecore().Field("State Label", Html.Sitecore().CurrentItem)" data-bind="text: State, value: State" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="addressBook-Zipcode">@Html.Sitecore().Field("Zip Code Label", Html.Sitecore().CurrentItem)<span class="required">*</span></label>
+                    <input type="text" class="form-control" id="addressBook-Zipcode" placeholder="@Html.Sitecore().Field("Zip Code Label", Html.Sitecore().CurrentItem)" data-bind="text: ZipPostalCode, value: ZipPostalCode" required>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="checkbox">
+                    <label><input type="checkbox" data-bind="checked: IsPrimary"> @Html.Sitecore().Field("Set As Primary Label", Html.Sitecore().CurrentItem)</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 border-top">
+        <button type="button" id="saveAddress" class="btn btn-primary" data-bind="click: saveAddress, enable: enableSave" data-loading-text="@savingLabel">@Html.Sitecore().Field("Save Changes Button", Html.Sitecore().CurrentItem)</button>
+        <button type="button" id="deleteAddress" class="btn btn-primary" data-bind="click: deleteAddress, enable: enableDelete" data-loading-text="@deletingLabel">@Html.Sitecore().Field("Delete Address Button", Html.Sitecore().CurrentItem)</button>
+        <a type="button" id="cancelChanges" class="btn btn-default" href="@StorefrontManager.StorefrontUri("/accountmanagement")">@Html.Sitecore().Field("Cancel Button", Html.Sitecore().CurrentItem)</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    initAddressList("addressesSection");
+</script>

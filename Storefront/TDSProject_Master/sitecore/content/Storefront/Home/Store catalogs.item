@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {F6EF6372-3323-44D3-83B9-7514A3C6621A}
+database: master
+path: /sitecore/content/Storefront/Home/Store catalogs
+parent: {441B60D3-09BB-4111-A3AD-D10076B78B54}
+name: Store catalogs
+master: {00000000-0000-0000-0000-000000000000}
+template: {16E859D2-6542-407A-AC65-F34BCAD3EB3D}
+templatekey: Standard Page
+
+----version----
+language: en
+version: 1
+revision: ae6eb9fb-5682-4aa4-8bef-0b13f68c1405
+
+----field----
+field: {C25982D9-ECD0-45C0-9E49-2ADE473CCE7C}
+name: Title
+key: title
+content-length: 14
+
+Store catalogs
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141124T080903
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ae6eb9fb-5682-4aa4-8bef-0b13f68c1405
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20150109T084906:635563901463460570Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

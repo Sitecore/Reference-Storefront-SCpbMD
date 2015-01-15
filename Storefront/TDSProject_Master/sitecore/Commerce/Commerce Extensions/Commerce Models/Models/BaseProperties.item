@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {9B9784A7-269E-4BF0-863B-4B48B6A7D008}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Commerce Models/Models/BaseProperties
+parent: {3878800C-2254-4ACF-A9F6-2B45F13C4916}
+name: BaseProperties
+master: {00000000-0000-0000-0000-000000000000}
+template: {4ACA6E56-C77E-4209-8B56-5B06C600800A}
+templatekey: Commerce Model Extension
+
+----version----
+language: en
+version: 1
+revision: dd451bf7-f283-4373-ba48-818ff30c4e72
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140816T194143
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+dd451bf7-f283-4373-ba48-818ff30c4e72
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140816T194143:635438149034662534
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

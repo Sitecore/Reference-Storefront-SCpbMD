@@ -1,0 +1,267 @@
+/* Dynamics Retail Overrides */
+
+.pagination ul > li > a, .pagination ul > li > span {
+    padding: 0 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 38px;
+}
+
+.thumbnail {
+    min-width: 200px;
+}
+
+.CategoryListItem {
+    min-width: 100px;
+    width: 120px;
+}
+
+.ProductImageItem {
+    min-width: 0;
+}
+
+.ProductSummary {
+    min-width: 0;
+}
+
+#productListing .span3 {
+    max-width: 150px;
+}
+
+#categoryList .span3 {
+    max-width: 150px;
+}
+
+.productLabel {
+    height: 35px;
+    background-color: white;
+    min-width: 110px;
+}
+
+    .productLabel .label-success {
+        height: 31px;
+        float: left;
+        width: 27%;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        vertical-align: middle;
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: silver;
+        line-height: 30px;
+    }
+
+    .productLabel .label-productName {
+        white-space: pre-wrap;
+        height: 27px;
+        max-height: 30px;
+        float: right;
+        width: 58%;
+        min-width: 58%;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: silver;
+        -moz-text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: black;
+    }
+
+    .productLabel .label-categoryName {
+        white-space: pre-wrap;
+        height: 100%;
+        max-height: 30px;
+        float: right;
+        width: 90%;
+        min-width: 90%;
+        padding-left: 8px;
+        padding-right: 5px;
+        background-color: white;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 1.1em;
+        color: black;
+        vertical-align: central;
+    }
+
+    .productLabel .wasprice {
+        line-height: 17px;
+        text-decoration: line-through;
+        color: mediumvioletred;
+    }
+
+    .wasprice {
+        text-decoration: line-through;
+        color: mediumvioletred;
+    }
+    .productLabel .isprice {
+        line-height: 17px;
+        color: black;
+    }
+
+.hero-unit {
+    margin-bottom: 0;
+}
+
+.FacetsBox {
+    padding-left: 5px;
+}
+
+/*.ProductUpsell {
+    min-width:100px;
+    width: 100px;
+}*/
+
+/*.ProductUpsell label-productName ProductSummary {
+    float: none;
+    }
+.ProductUpsell label-success ProductSummary {
+        float: none;
+    }*/
+
+#productUpsells .span3 {
+    min-width: 100px;
+    width: 100px;
+}
+
+#productUpsells .thumbnail {
+    height: 155px;
+}
+
+#productUpsells .span3 .label-productName {
+    float: none;
+    width: 90%;
+    max-height: 25px;
+}
+
+#productUpsells .span3 .label-success {
+    float: none;
+    width: 90%;
+    line-height: .5em;
+}
+
+#productUpsells .productLabel {
+    float: none;
+    width: 90%;
+    min-width: 0;
+    font-size: .5em;
+}
+
+body {
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+.carousel-inner {
+    text-align: center;
+}
+
+.PromoList {
+    width: 270px;
+    text-align: center;
+}
+
+.ProductFeaturesContainer {
+    background-color: silver;
+    width: 70%;
+    max-width: 70%;
+}
+
+#Features td {
+    width: 50%;
+    vertical-align: top;
+}
+
+.AccountHomePlugin {
+    min-width: 0;
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+.Plugintoolbar ul {
+    display: inline;
+    border-color: #f3f3f3 #bbb #bbb #f3f3f3;
+    margin: 0;
+    padding: .1em;
+    zoom: 1;
+    text-align: left;
+}
+
+.AccountHomePlugin h4 {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 30px;
+}
+
+.Plugintoolbar li {
+    display: inline;
+    border-color: #f3f3f3 #bbb #bbb #f3f3f3;
+    margin: 0;
+    padding: .5em;
+    zoom: 1;
+}
+
+.toolbar li {
+    display: inline;
+    background-color: #eee;
+    border: 1px solid;
+    border-color: #f3f3f3 #bbb #bbb #f3f3f3;
+    margin: 0;
+    padding-left: .2em;
+    padding-right: .2em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    zoom: 1;
+}
+
+#shippingMethodsContainer ul {
+    list-style-type: none;
+    margin-left: 0px;
+}
+
+#shippingMethodsContainer li {
+    padding-top: 30px;
+}
+
+#shippingMethodsContainer li input, li label {
+    float: left;
+    margin-left: 5px;
+}
+
+.storesMap {
+    position: relative;
+    border: 1px solid #808080;
+    height: 460px;
+    width: 460px;
+    margin-top: 20px;
+}
+
+.store-Selected {
+    background-color: #65A5F1;
+}
+
+.store-Selected * {
+    color: #FFFFFF;
+}
+
+.availableStore {
+    margin-bottom: 20px;
+}
+
+.storeCount-Number {
+    background: none repeat scroll 0 0 #FF6A00;
+    border-radius: 0.8em;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 5px;
+    text-align: center;
+    width: 1.6em;
+}

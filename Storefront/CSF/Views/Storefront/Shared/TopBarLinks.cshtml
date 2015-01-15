@@ -1,0 +1,45 @@
+﻿@using Sitecore.Commerce.Storefront.Managers;
+@model RenderingModel
+@{
+    Sitecore.Data.Fields.MultilistField linksField = Model.Item.Fields["QuickLinks"];
+    Item[] links = linksField != null ? linksField.GetItems() : new Item[0];
+}
+<nav id="B05-TopBarLinks" class="quicklinks">
+    <ul>
+        @{
+            bool displayPipe = false;
+
+            if (Request.IsAuthenticated)
+            {
+                <li>
+                    <a class="quicklink-space" id="UserNameLink" href="@StorefrontManager.StorefrontUri("/accountmanagement")" class="username" title="My Acount">@Sitecore.Context.User.LocalName</a>
+                </li>
+            
+                displayPipe = true;
+            }
+            
+            for (int i = 0; i < links.Length; i++)
+            {
+                Item link = links[i];
+                
+                Sitecore.Data.Fields.CheckboxField showWhenAuthenticated = link.Fields[StorefrontConstants.KnownFieldNames.ShowWhenAuthenticated];
+                Sitecore.Data.Fields.CheckboxField showAlways = link.Fields[StorefrontConstants.KnownFieldNames.ShowAlways];
+
+                bool show =  (showAlways.Checked) || (showWhenAuthenticated.Checked && Request.IsAuthenticated) || (!showWhenAuthenticated.Checked && !Request.IsAuthenticated);
+            
+                if (show)
+                { 
+                    if (displayPipe)
+                    {
+                        <li class="quicklink-space"> | </li>        
+                    }
+                    else
+                    {
+                        displayPipe = true;
+                    }
+                    <li>@Html.Sitecore().Field("Link", link, new { text = Html.Sitecore().Field("Text", link) })</li>
+                }
+            }
+        }
+    </ul>
+</nav>

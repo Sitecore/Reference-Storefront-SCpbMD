@@ -1,0 +1,65 @@
+﻿@model Sitecore.Commerce.Storefront.Models.Storefront.ProductListHeaderViewModel
+<div id="C04-ProductListHeader" class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-6">
+                <div class="Sort-By-container">
+                    <span>@Html.Sitecore().Field("Sort By", Model.Item)</span>
+                    <select class="form-control sortDropdown">
+                        @if (Model.SortFields != null)
+                        {
+                            foreach (var sortField in Model.SortFields)
+                            {
+                                var ascSelected = string.Empty;
+                                var descSelected = string.Empty;
+
+                                if (!string.IsNullOrEmpty(ViewBag.SortField) && ViewBag.SortField == sortField.Name)
+                                {
+                                    if (ViewBag.SortDirection == Sitecore.Commerce.Connect.CommerceServer.CommerceConstants.SortDirection.Asc)
+                                    {
+                                        ascSelected = "selected";
+                                    }
+                                    else
+                                    {
+                                        descSelected = "selected";
+                                    }
+                                }
+
+                                <option value="@sortField.Name+" @ascSelected>@sortField.DisplayName @Model.Rendering.Item["Ascending"]</option>
+                                <option value="@sortField.Name-" @descSelected>@sortField.DisplayName @Model.Rendering.Item["Descending"]</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 hidden-xs">
+                <div class="showing-amount">
+                    <h6>@Html.Sitecore().Field("Showing", Model.Item) <span id="C04-ProductListHeader-StartItem">@Model.Pagination.StartResultIndex</span> - <span id="C04-ProductListHeader-EndItem">@Model.Pagination.EndResultIndex</span> @Html.Sitecore().Field("Of", Model.Item) <span id="C04-ProductListHeader-TotalCount">@Model.Pagination.TotalResultCount</span></h6>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+                <div class="results-container">
+                    <span>@Html.Sitecore().Field("Results Per Page", Model.Item)</span>
+                    <select class="form-control changePageSize">
+                        @{
+                            var pageSizesString = Model.Rendering.Item["Results Per Page Values"];
+
+                            if (!string.IsNullOrEmpty(pageSizesString))
+                            {
+                                int pageSize;
+                                var pageSizes = pageSizesString.Split('|');
+                                foreach (var size in pageSizes)
+                                {
+                                    if(int.TryParse(size, out pageSize))
+                                    { 
+                                        <option value="@pageSize" @if (Model.Pagination.PageResultCount == pageSize) { <text> selected </text>  }>@pageSize</option>
+                                    }
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

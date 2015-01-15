@@ -1,0 +1,53 @@
+﻿@model Sitecore.Commerce.Storefront.Models.Storefront.ProductFacetsViewModel
+
+@if (Model.ChildProductFacets.Any())
+{ 
+    <div id="C03-ProductFacets" class="row">
+        <div class="col-md-12">
+            <!-- Toggle facets for mobile -->
+            @foreach (var facet in Model.ActiveFacets)
+            {
+                if (facet.IsValid())
+                {
+                    <div class="facets-container">
+                        <h5>@facet.DisplayName.ToUpper()</h5>
+                        <label for="color-toggle"> + </label>
+                        <input type="checkbox" id="color-toggle" class="toggle-facets" />
+                        <div class="@facet.DisplayName.ToLower().Replace(" ", "")-list">
+                            <ul class="@facet.DisplayName.ToLower()">
+                                @foreach (var value in facet.FoundValues)
+                                {
+                                    var facetCount = value.AggregateCount;
+                                    if (value.IsValid())
+                                    {
+                                        string name = value.Name;
+                                        switch (name)
+                                        {
+                                            case "1":
+                                                name = "Yes";
+                                                break;
+                                            case "0":
+                                                name = "No";
+                                                break;
+                                        }
+
+                                        var isActveFacet = string.Empty;
+                                        foreach (var activeFacet in Model.ActiveFacets)
+                                        {
+                                            if (activeFacet.Values.Contains(value.Name))
+                                            { 
+                                                isActveFacet = "class=active";
+                                            }
+                                        }
+
+                                        <li @isActveFacet><a href="@Url.AddToFacets(facet.Name, value.Name)"><span pid="facetName">@name</span> <span pid="facetCount">(@facetCount)</span></a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}

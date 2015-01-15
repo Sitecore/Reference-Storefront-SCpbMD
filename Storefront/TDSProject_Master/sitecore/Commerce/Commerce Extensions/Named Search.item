@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {3B4025B3-5FF0-4814-8DD5-2572F00EF02C}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Named Search
+parent: {41FA99F0-4A37-48E1-B171-3FC93669E674}
+name: Named Search
+master: {00000000-0000-0000-0000-000000000000}
+template: {AE252077-D072-4179-8CE7-BCF563F09F29}
+templatekey: Commerce Extension
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
+----version----
+language: en
+version: 1
+revision: 6e12cceb-e400-4c7e-a55c-9c9359702e36
+
+----field----
+field: {50E1E184-56B3-4D2A-91D9-CED4448ED9CC}
+name: Partner
+key: partner
+content-length: 8
+
+Sitecore
+----field----
+field: {FDAB28FA-DED5-4B72-A838-5ECADA478218}
+name: Initialized
+key: initialized
+content-length: 1
+
+1
+----field----
+field: {421CC457-31F6-48C4-AFD1-23C18F78A606}
+name: Enabled
+key: enabled
+content-length: 1
+
+1
+----field----
+field: {C085AB73-050D-4DE9-8206-F5727FFCEC81}
+name: Version
+key: version
+content-length: 1
+
+1
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140910T163025
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6e12cceb-e400-4c7e-a55c-9c9359702e36
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140914T020659:635462572190882785
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

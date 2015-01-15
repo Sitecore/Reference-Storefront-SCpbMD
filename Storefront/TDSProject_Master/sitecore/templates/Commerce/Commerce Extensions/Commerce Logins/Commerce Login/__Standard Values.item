@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {B9436D06-0590-4EAC-9C96-AD5B9111841B}
+database: master
+path: /sitecore/templates/Commerce/Commerce Extensions/Commerce Logins/Commerce Login/__Standard Values
+parent: {9634C548-DD23-4908-8AFB-9FF9B962CDEB}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {9634C548-DD23-4908-8AFB-9FF9B962CDEB}
+templatekey: Commerce Login
+
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 22
+
+People/16x16/dude1.png
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 415
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{0D62B8AF-6C41-4573-B246-ABEAD41A0B19}"><r ds="{17727470-702D-5476-866C-EE66B46FD29A}" id="{943A7D19-5380-4854-9A60-9E2290205191}" par="" ph="TopNavigation" uid="{4654BADB-2FDF-430C-9AAB-DC138A4A5AF7}" /><r id="{9649BAB4-B954-4EB7-B948-883F4EFE957A}" ph="main" uid="{2BC75904-5F49-4B1A-925F-3939944D738C}" /></d></r>
+----version----
+language: en
+version: 1
+revision: 17a6e94d-3456-4b19-a488-4adc99eaf7ce
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140917T114633
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+17a6e94d-3456-4b19-a488-4adc99eaf7ce
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140917T115020:635465514202530279
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

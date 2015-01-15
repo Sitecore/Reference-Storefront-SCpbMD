@@ -1,0 +1,19 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+
+    <contentSearch>
+      <indexConfigurations>
+        <defaultSolrIndexConfiguration type="Sitecore.ContentSearch.SolrProvider.SolrIndexConfiguration, Sitecore.ContentSearch.SolrProvider">
+
+          <fields hint="raw:AddComputedIndexField">
+            <field fieldName="ProductColor" returnType="stringCollection">Sitecore.Commerce.Connect.CommerceServer.Search.ComputedFields.CommerceVariants, Sitecore.Commerce.Connect.CommerceServer</field>
+            <field fieldName="ProductSize" returnType="stringCollection">Sitecore.Commerce.Connect.CommerceServer.Search.ComputedFields.CommerceVariants, Sitecore.Commerce.Connect.CommerceServer</field>
+            <field fieldName="VariantId" returnType="stringCollection">Sitecore.Commerce.Connect.CommerceServer.Search.ComputedFields.CommerceVariants, Sitecore.Commerce.Connect.CommerceServer</field>
+          </fields>
+
+        </defaultSolrIndexConfiguration>
+      </indexConfigurations>
+    </contentSearch>
+
+  </sitecore>
+</configuration>

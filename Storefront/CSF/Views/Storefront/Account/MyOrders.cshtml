@@ -1,0 +1,47 @@
+﻿@using Sitecore.Commerce.Entities.Orders
+@using Sitecore.Commerce.Storefront.Managers
+@model List<OrderHeader>
+
+<div class="wrap-main-content">
+    <div class="col-md-12">
+        <div class="border-bottom">
+            <h1>
+                @Html.Sitecore().Field("Recent Orders Label", Html.Sitecore().CurrentItem)
+                <span class="back-to-myaccount pull-right">
+                    <a href="@StorefrontManager.StorefrontUri("/accountmanagement")">
+                        <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @Html.Sitecore().Field("Back to My Account Label", Html.Sitecore().CurrentItem)
+                    </a>
+                </span>
+            </h1>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover small-list">
+                <thead>
+                    <tr>
+                        <td>@Html.Sitecore().Field("Order Number Label", Html.Sitecore().CurrentItem)</td>
+                        <td>@Html.Sitecore().Field("Order Date Label", Html.Sitecore().CurrentItem)</td>
+                        <td>@Html.Sitecore().Field("Order Status Label", Html.Sitecore().CurrentItem)</td>
+                        <td width="10%">&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        var commerceOrder = order as CommerceOrderHeader;
+                        if (commerceOrder == null)
+                        {
+                            continue;
+                        }
+                        <tr>
+                            <td>@commerceOrder.ExternalId</td>
+                            <td>@commerceOrder.LastModified.ToShortDateString()</td>
+                            <td>@commerceOrder.Status</td>
+                            <td><a href="@StorefrontManager.StorefrontUri("/accountmanagement/myorder")?id=@order.ExternalId"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

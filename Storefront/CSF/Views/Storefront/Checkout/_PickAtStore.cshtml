@@ -1,0 +1,14 @@
+﻿<div class="col-md-12"><h1>PICK UP ITEMS AT STORE</h1></div>
+<div class="col-md-8"><h4>Find a store near you</h4></div>
+<div class="col-md-4"><h4>Stores close to your current position</h4></div>
+    <div class="col-md-8">
+        <div class="input-group find-store">
+            <!-- TODO: Når man trykker Enter skal den submitte til kortet -->
+            <input type="text" id="StoreAddressSearch" class="form-control" placeholder="@Html.Sitecore().Field("Search Input Placeholder", Html.Sitecore().CurrentItem.Children["Delivery"])">
+            <span id="SearchStores" class="input-group-addon"><i class="fa fa-search"></i></span>
+        </div>
+        <div class="form-group">
+            <div id="storesMap" class="Flexible-container map-canvas"></div>
+        </div>
+    </div>
+    <div id="StoreSearchResultsContainer" class="col-md-4" style="display:none;"></div>

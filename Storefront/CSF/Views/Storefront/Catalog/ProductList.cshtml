@@ -1,0 +1,18 @@
+﻿@model CategoryViewModel
+
+@if (Model.ChildProducts.Any())
+{
+    <div id="C05-ProductList" class="row">
+        <div class="col-md-12 product-list">
+            @foreach (var product in Model.ChildProducts)
+            {
+                var productModel = new ProductViewModel(product);
+                productModel.Initialize(Model.Rendering);
+
+                <div class="col-sm-4 col-xs-12">
+                    @Html.Partial("~/Views/Storefront/Catalog/_ProductSummary.cshtml", productModel)
+                </div>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,121 @@
+----item----
+version: 1
+id: {BE426BBB-DAB2-4796-A4CD-EE83EC25A24E}
+database: master
+path: /sitecore/content/Storefront/Home/AccountManagement/MyWishLists
+parent: {4D316BBA-345F-4929-9E84-A2208C0F7AA6}
+name: MyWishLists
+master: {00000000-0000-0000-0000-000000000000}
+template: {C2290F6D-F015-4EC7-8443-3C98BBE1C5CB}
+templatekey: MyWishLists Page
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 1738
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{F5034347-7E92-41D7-B8EB-F51D1F1BCF1C}"><r id="{15A09072-CE89-4126-A9E4-17753FC726FF}" ph="top" uid="{0E2D603A-CF36-4EE2-B598-D2E06AEBD5AE}" /><r id="{B6C0593E-1C35-4C61-8DB5-E7C7AA19D955}" ph="topleft" uid="{17F64DAC-2A2C-4F61-A993-F3BC59203AA0}" /><r ds="" id="{FAA386D8-192F-4762-839D-D637BD11549F}" par="" ph="topright" uid="{1B0865BA-8725-40D7-B472-5466055F1834}" /><r ds="{9988B682-59C7-4319-8BF9-7071F132A5AD}" id="{9AA8E388-A6BD-46E1-A73B-DDEF601DE6F8}" par="" ph="topcenter" uid="{8C308774-5362-4996-A416-527ED85204F1}" /><r id="{79167FB2-C7E0-4124-81C9-61AFBB279388}" ph="navigation" uid="{1A6AE860-A323-460D-B8D7-CEFA22469672}" /><r id="{0FA59DDC-5AEB-4ADB-B64B-D8D03B351680}" ph="navigationextra" uid="{D0FFD21B-BDDF-4C59-A150-C43C76CABF37}" /><r ds="{98CE979E-638E-4EE0-AD7F-05164173F1C1}" id="{DC1B9040-8694-456A-A5E6-81996BD1B2AA}" par="" ph="navigationextraleft" uid="{5D2C83EE-F8CA-41B9-BBF2-03CBC74D3F52}" /><r ds="{5886D851-1625-48AE-A787-84FC5B5EB271}" id="{582FEA78-404C-44D8-B6B4-356B080F5A7C}" par="" ph="navigationextraright" uid="{0D3D37F8-ED81-4F72-B7C2-8D5AF8EB0094}" /><r ds="{889A6934-BCDC-4294-94B7-6D141E7312B4}" id="{CFD437A6-404A-4C8C-8A41-EED2FB86D5DE}" par="" ph="navigationmain" uid="{3C2F52A6-A439-456D-A812-04A831DB8A0F}" /><r id="{A093583B-6870-44AD-B14E-54703B32E9B9}" ph="middle" uid="{F720367A-12C1-4818-887C-EB6B70A32640}" /><r id="{4D6EF252-1EA8-4B74-85E9-8F2BADAEF994}" ph="center" uid="{CC188B18-7C14-45B5-A612-29EEF59CF3CE}" /><r ds="{F6504124-F766-43D0-824B-EB339CAE8E5F}" id="{2658217E-196A-4041-8F81-B8AFA7E377EE}" par="" ph="bottom" uid="{90413A71-AF3B-426B-938F-DCD2F2968374}" /></d></r>
+----version----
+language: en
+version: 1
+revision: b19ba255-8853-454d-b442-7b2c23b917c5
+
+----field----
+field: {C25982D9-ECD0-45C0-9E49-2ADE473CCE7C}
+name: Title
+key: title
+content-length: 11
+
+MyWishLists
+----field----
+field: {7CF52E25-A1D4-4F8C-8602-655A7C2CA9A5}
+name: Name Label
+key: name label
+content-length: 4
+
+Name
+----field----
+field: {5B23B12E-7764-4717-8A14-CBBCDD7B1BF7}
+name: Items Label
+key: items label
+content-length: 5
+
+Items
+----field----
+field: {DC019F89-2CDA-4832-9353-E906BE2DBD0E}
+name: Last Item Added Label
+key: last item added label
+content-length: 15
+
+Last item added
+----field----
+field: {5ADBB969-64D5-409B-83E3-D812EF5C45DD}
+name: Actions Labels
+key: actions labels
+content-length: 7
+
+Actions
+----field----
+field: {B7FCB6AB-A6EC-49D4-BBE5-BEA206EA5FEB}
+name: Back to My Account Label
+key: back to my account label
+content-length: 18
+
+Back to My Account
+----field----
+field: {F5BB14CE-D2A7-4F5D-837F-3B786B39CCE7}
+name: Create New Wish List Label
+key: create new wish list label
+content-length: 20
+
+Create new wish list
+----field----
+field: {9BDE8E59-F565-4A12-A544-080152392B43}
+name: Add to Cart Button
+key: add to cart button
+content-length: 11
+
+Add to cart
+----field----
+field: {3BFECC5E-A3FA-4D15-82FE-0EDC526CD161}
+name: Create Button
+key: create button
+content-length: 6
+
+Create
+----field----
+field: {832C8CEE-4C71-4D4D-8233-A3A9074EB3F1}
+name: My Wish Lists Title
+key: my wish lists title
+content-length: 13
+
+My Wish Lists
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150106T212713Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b19ba255-8853-454d-b442-7b2c23b917c5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 35
+
+20150106T224830:635561813104068852Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

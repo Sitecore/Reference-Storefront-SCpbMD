@@ -1,0 +1,80 @@
+﻿@{
+    // Header
+    var headerShippAllLabel = Html.Sitecore().Field("Ship All Items Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var shippingAddressLabel = Html.Sitecore().Field("Shipping Address Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var chooseAddressLabel = Html.Sitecore().Field("Choose Address Book Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var addressLabel = Html.Sitecore().Field("Choose Address Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var shippingNameLabel = Html.Sitecore().Field("Shipping Name Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var cityLabel = Html.Sitecore().Field("City Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var countryLabel = Html.Sitecore().Field("Country Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var stateLabel = Html.Sitecore().Field("State Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var address1Label = Html.Sitecore().Field("Address Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var zipcodeLabel = Html.Sitecore().Field("Zipcode Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var viewButtonLabel = Html.Sitecore().Field("View Button Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+    var viewButtonLoadingLabel = Html.Sitecore().Field("View Button Loading Label", Html.Sitecore().CurrentItem.Children["Delivery"]);
+
+}
+
+<div data-bind="attr:{id:'rsf-error-delivery-'+ externalCartlineId}" style="display:none;" class="col-md-12">
+    <!-- TODO: Error messages here -->
+    <div class="bg-danger error-handling">
+        <p class="error-header"><span class="glyphicon glyphicon-ban-circle"></span> An error has occurred!</p>
+        <div data-bind="attr:{id:'errorsSummary-'+ externalCartlineId}"></div>
+    </div>
+</div>
+<div class="col-md-12"><h1>SHIP THIS ITEM</h1></div>
+
+<div class="col-md-12"><h3>@shippingAddressLabel:</h3></div>
+<!--Sample for Div needs Id-->
+    <div class="col-md-4 col-md-offset-8">
+        <div class="form-group" data-bind="visible:$parent.isAuthenticated">
+            <label for="ShippingAdressSelect" data-bind="attr:{for:'ShippingAdressSelect-'+ externalCartlineId}">@chooseAddressLabel</label>
+            <select id="ShippingAdressSelect" class="form-control" data-bind="options: $parent.userAddresses, optionsText:'street', optionsValue:'id'" title="@addressLabel"></select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group required-field">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-Name-'+ externalCartlineId}">@shippingNameLabel<span class="required">*</span></label>
+            <input type="text" class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-Name-'+ externalCartlineId}" placeholder="@shippingNameLabel">
+        </div>
+        <div class="form-group required-field">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-City-'+ externalCartlineId}">@cityLabel<span class="required">*</span> </label>
+            <input type="text" class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-City-'+ externalCartlineId}" placeholder="@cityLabel">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group required-field">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-Country-'+ externalCartlineId}">@countryLabel<span class="required">*</span></label>
+            <select class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-Country-'+ externalCartlineId}, options: $parent.countries, optionsText:'country', optionsValue:'code'"></select>
+        </div>
+        <div class="form-group">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-State-'+ externalCartlineId}">@stateLabel</label>
+            <!-- ko if: states == 'undefined' -->
+            <select class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-State-'+ externalCartlineId}, options: $parent.states, optionsText:'name', optionsValue:'code'"></select>
+            <!-- /ko -->
+            <!-- ko if: states != 'undefined' -->
+            <input type="text" class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-State-'+ externalCartlineId}" placeholder="@stateLabel">
+            <!-- /ko -->
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-Address-'+ externalCartlineId}">@address1Label</label>
+            <input type="text" class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-Address-'+ externalCartlineId}" placeholder="@address1Label">
+        </div>
+        <div class="form-group">
+            <label data-bind="attr:{for:'lineShipAllItemsInput-Zipcode-'+ externalCartlineId}">@zipcodeLabel</label>
+            <input type="text" class="form-control" data-bind="attr:{id:'lineShipAllItemsInput-Zipcode-'+ externalCartlineId}" placeholder="@zipcodeLabel">
+        </div>
+    </div>
+    <input type="text" data-bind="attr:{id:'lineShipAllItemsInput-ExternalId-'+ externalCartlineId}" style="visibility:hidden; display:none;" />
+    <div class="col-md-12"><h3>Available shipping options:</h3></div>
+    <div class="col-md-3">
+        <button data-bind="attr:{id:'lineGetShippingMethods-'+ externalCartlineId}" type="button" data-loading-text="@viewButtonLoadingLabel" class="btn btn-default lineGetShippingMethods">@viewButtonLabel</button>
+    </div>
+    <div class="col-md-9">
+        <div class="form-group shipping-options" data-bind="foreach: shippingMethods, attr:{id:'shippingMethodsContainer-'+ externalCartlineId}">
+            <input type="radio" style="margin-left:20px" data-bind="value: id, attr:{ 'name': 'shippingMethodId-' + $parent.externalCartlineId ,'id': 'method-' + description, 'data-name':description}">
+            <label data-bind="text: description" style="vertical-align: middle;"></label>
+        </div>
+    </div>

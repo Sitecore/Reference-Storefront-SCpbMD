@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {AAF9B3B2-BE53-4B85-BDBF-E7704C0B28D2}
+database: master
+path: /sitecore/layout/Renderings/Storefront/Shared/SocialConnector
+parent: {44BD03A4-2010-425F-9D12-6D14940C762A}
+name: SocialConnector
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 47
+
+/Views/Storefront/Shared/SocialConnector.cshtml
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
+----field----
+field: {C7C26117-DBB1-42B2-AB5E-F7223845CCA3}
+name: __Thumbnail
+key: __thumbnail
+content-length: 58
+
+<image mediaid="{9C9727FF-B900-4F5D-8AC0-DD01323577EA}" />
+----version----
+language: en
+version: 1
+revision: 9e6ad7e3-6d2e-4ae7-adf4-c66501f7cdef
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141023T063151
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9e6ad7e3-6d2e-4ae7-adf4-c66501f7cdef
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141106T101630:635508657901323502
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

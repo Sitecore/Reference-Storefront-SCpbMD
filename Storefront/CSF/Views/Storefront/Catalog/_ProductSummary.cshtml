@@ -1,0 +1,63 @@
+﻿@model ProductViewModel
+
+@{
+    var listPrice = Sitecore.Context.PageMode.IsPageEditorEditing ? Model.ListPriceRender : @Html.DisplayFor(model => Model.ListPrice);
+    var adjustedPrice = Sitecore.Context.PageMode.IsPageEditorEditing ? Model.ListPriceRender : @Html.DisplayFor(model => Model.AdjustedPrice);
+}
+
+<div class="col-item">
+    <div class="photo">
+        @using (Html.EditFrame(Model.Item.Paths.FullPath, CommerceConstants.KnownItemPaths.EditFrameImages))
+        {
+            if (Model.Images != null && Model.Images.Count > 0)
+            {
+                <a href="@Model.GetLink()">
+                    <img src="@Model.Images[0].GetImageUrl(300, 300)" class="img-responsive" alt="product image" title="@Model.DisplayNameRender" />
+                </a>
+            }
+        }
+    </div>
+    <div class="info">
+        <div class="row">
+            <div class="price col-md-12 col-xs-12">
+                <h5>@Model.DisplayNameRender</h5>
+                <p>@Model.RenderField("Brand")</p>
+                @if (Model.IsOnSale)
+                {
+                    <div class="col-md-12 col-xs-12"><h3 class="price-now">@Html.DisplayFor(model => Model.AdjustedPrice) <span class="savings">@Html.Sitecore().Field("Save procent lead", Model.Rendering.RenderingItem) @Model.SavingsPercentage%</span></h3></div>
+                    <div class="col-md-12 col-xs-12"><h4 class="price-before">@Html.DisplayFor(model => Model.ListPrice)</h4></div>
+                }
+                else
+                {
+                    <div class="col-md-12 col-xs-12"><h3 class="price-now">@Html.DisplayFor(model => Model.ListPrice)</h3></div>
+                }
+            </div>
+            <div class="rating hidden-sm hidden-xs col-md-12 col-xs-12">
+                <ul>
+                    <li @(Model.CustomerAverageRating >= 1 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                    <li @(Model.CustomerAverageRating >= 2 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                    <li @(Model.CustomerAverageRating >= 3 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                    <li @(Model.CustomerAverageRating >= 4 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                    <li @(Model.CustomerAverageRating >= 5 ? "class=rated" : "")><span class="glyphicon glyphicon-star"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="separator clear-left">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <p class="btn-details">
+                                <a href="@Model.GetLink()">
+                                    <span class="glyphicon glyphicon-th-list">
+                                    </span>&nbsp;@Model.ProductDetailsLinkText
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+﻿@model RenderingModel
+<div id="E02-ErrorImage" class="logo">
+    @Html.Sitecore().Field("Link", Model.Item, new { text = @Html.Sitecore().Field("Image", Model.Item) })
+</div>

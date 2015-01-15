@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {4C784376-E2C6-4B39-A789-5D8C4FB3CE23}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Commerce Models/Models/Property/DefaultValueBigNumber
+parent: {5CBDF0CE-50F9-44BB-9704-36793BBF43D3}
+name: DefaultValueBigNumber
+master: {00000000-0000-0000-0000-000000000000}
+template: {E95EFBE5-4468-4990-A376-B0BC7E90B749}
+templatekey: Commerce Model Property BuiltIn
+
+----version----
+language: en
+version: 1
+revision: ac30af32-a857-47d0-b1d5-04438b27f38b
+
+----field----
+field: {B49691B9-B772-4530-A025-E48AD8952C7B}
+name: Data Type
+key: data type
+content-length: 9
+
+bignumber
+----field----
+field: {7957E6E2-59BF-4441-9C34-A11C04EFEA0B}
+name: NativeName
+key: nativename
+content-length: 14
+
+i_DefaultValue
+----field----
+field: {4AAA5A30-63C1-4619-9ADF-0E756BB814F5}
+name: BuiltIn
+key: builtin
+content-length: 1
+
+1
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140817T001550
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ac30af32-a857-47d0-b1d5-04438b27f38b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140817T005821:635438339017414563
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

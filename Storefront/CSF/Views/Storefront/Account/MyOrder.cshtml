@@ -1,0 +1,202 @@
+﻿@using Sitecore.Commerce.Entities.Carts
+@using Sitecore.Commerce.Storefront.Managers
+@using Sitecore.Data.Fields
+@model CommerceOrder
+@{
+    var parties = Model.Parties;
+    var shippings = Model.Shipping;
+    var shippingAddress = parties.FirstOrDefault() as CommerceParty; //THIS IS A DYNAMICS CONNECTS BUG. IT COULD BE MORE THAN ONE ADDRESS 
+    var payments = Model.Payment;
+    var paymentAddress = payments.FirstOrDefault() != null ? parties.FirstOrDefault(a => a.PartyId.Equals(payments.FirstOrDefault().PartyID)) as CommerceParty : null;
+    var total = Model.Total as CommerceTotal;
+    var adjustments = Model.Adjustments;
+    var lines = Model.Lines;
+    var individualShipping = lines.Count > 1 && (shippings == null || shippings.Count == 0);
+}
+
+<div class="wrap-main-content">
+    <div class="row">
+        <a href="@StorefrontManager.StorefrontUri("/accountmanagement/myorders")" class="view-all pull-right">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> @Html.Sitecore().Field("View All Orders Label", Html.Sitecore().CurrentItem)
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <p class="order-number">@Html.Sitecore().Field("Order Number Label", Html.Sitecore().CurrentItem): @Model.TrackingNumber</p>
+                <p class="order-date">@Html.Sitecore().Field("Order Date Label", Html.Sitecore().CurrentItem): @Model.Created.ToShortDateString()</p>
+                <p class="order-status">@Html.Sitecore().Field("Order Status Label", Html.Sitecore().CurrentItem): <span>@Model.Status</span></p>
+            </div>
+            <div class="col-md-12">
+                <h3>@Html.Sitecore().Field("Your Products Header", Html.Sitecore().CurrentItem)</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        @foreach (CommerceCartLine cartLine in lines)
+                        {
+                            var product = cartLine.Product as CommerceCartProduct;
+                            if (product == null)
+                            {
+                                continue;
+                            }
+
+                            var lineTotal = cartLine.Total;
+                            var savings = ((CommerceTotal)lineTotal).LineItemDiscountAmount;
+                            var lineShippingAddress = cartLine.Properties["ShippingAddress"] as CommerceParty;
+                            var email = cartLine.Properties["ElectronicDeliveryEmail"] as string;
+                            var image = string.Empty;
+                            var images = cartLine.Properties["Images"] as Field;
+                            if (images != null)
+                            {
+                                MediaItem imageItem = Sitecore.Context.Database.GetItem(images.Value.Split('|')[0]);
+                                image = imageItem.GetImageUrl(110, 110);
+                            }
+
+                            <tr>
+                                <td class="cart-image hidden-sm hidden-xs"><img src="@image" class="img-responsive" alt="a" /></td>
+                                <td class="cart-info">
+                                    <h5>@product.DisplayName</h5>
+                                    @if (!string.IsNullOrEmpty(product.Properties["Color"] as string))
+                                    {
+                                        <p class="cart-variable">@Html.Sitecore().Field("Color Label", Html.Sitecore().CurrentItem): @product.Properties["Color"]</p>
+                                    }
+                                    <p class="cart-delivery">
+                                        @Html.Sitecore().Field("Delivery Label", Html.Sitecore().CurrentItem): @cartLine.ShippingMethodName
+                                    </p>
+                                    @if (individualShipping && lineShippingAddress != null)
+                                    { 
+                                        <div class="cart-delivery">
+
+                                            <ul>
+                                                <li>@lineShippingAddress.Name</li>
+                                                <li>@lineShippingAddress.Address1, @lineShippingAddress.City</li>
+                                                <li>@lineShippingAddress.State, @lineShippingAddress.ZipPostalCode</li>
+                                                <li>@lineShippingAddress.Country</li>
+                                            </ul>
+                                        </div>
+                                    }
+                                    @if (!string.IsNullOrEmpty(email))
+                                    {
+                                        <p class="cart-email">@email</p>
+                                    }
+                                </td>
+                                <td class="cart-price">@product.Price.Amount.ToCurrency()</td>
+                                <td class="cart-quantity text-center" style="width: 10%;">@cartLine.Quantity</td>
+                                <td class="cart-total">
+                                    <p>@lineTotal.Amount.ToCurrency()</p>
+                                    @if (savings > 0)
+                                    {
+                                        <span class="savings">@Html.Sitecore().Field("You save Label", Html.Sitecore().CurrentItem) @savings.ToCurrency()</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h3>@Html.Sitecore().Field("Discounts and Loyalty Credits Header", Html.Sitecore().CurrentItem)</h3>
+            </div>
+            @if (payments != null && payments.Count > 0) //THIS IS A DYNAMICS CONNECTS BUG. DISCOUNT CODES SHOULD BE IN THE ADJUSTMENTS COLLECTION NOT PAYMENTS 
+            {
+                foreach (PaymentInfo payment in payments)
+                {
+                    if (!payment.PartyID.Equals("Discount"))
+                    {
+                        continue;
+                    }
+
+                    foreach (var line in payment.LineIDs)
+                    {
+                        <div class="col-md-12">
+                            <div class="giftcard-reciept">
+                                <span class="title">@Html.Sitecore().Field("Promotion Codes Label", Html.Sitecore().CurrentItem):</span>
+                                <span class="number">@line</span>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            @if (!string.IsNullOrEmpty(Model.LoyaltyCardID))
+            {
+                <div class="col-md-12">
+                    <div class="giftcard-reciept">
+                        <span class="title">@Html.Sitecore().Field("Loyalty Card Label", Html.Sitecore().CurrentItem):</span>
+                        <span class="number">@Model.LoyaltyCardID</span>
+                    </div>
+                </div>
+            }
+            <div class="col-md-12"><h3>@Html.Sitecore().Field("Order Total Label", Html.Sitecore().CurrentItem)</h3></div>
+            <div class="col-md-12">
+                <div class="col-md-12 summary">
+                    <span class="text">@Html.Sitecore().Field("Subtotal Label", Html.Sitecore().CurrentItem):</span>
+                    <span class="amount">@total.Subtotal.ToCurrency()</span>
+                </div>
+                <div class="col-md-12 summary">
+                    <span class="text">@Html.Sitecore().Field("Shipping Total Label", Html.Sitecore().CurrentItem):</span>
+                    <span class="amount">@total.ShippingTotal.ToCurrency()</span>
+                </div>
+                <div class="col-md-12 summary">
+                    <span class="text">@Html.Sitecore().Field("Tax Total Label", Html.Sitecore().CurrentItem):</span>
+                    <span class="amount">@total.TaxTotal.Amount.ToCurrency()</span>
+                </div>
+                @if (total.OrderLevelDiscountAmount > 0)
+                {
+                    <div class="col-md-12 summary">
+                        <span class="text">@Html.Sitecore().Field("Savings Label", Html.Sitecore().CurrentItem):</span>
+                        <span class="amount">- @total.OrderLevelDiscountAmount.ToCurrency()</span>
+                    </div>
+                }
+                <div class="col-md-12 total">
+                    <span class="text">@Html.Sitecore().Field("Order total Label", Html.Sitecore().CurrentItem):</span>
+                    <span class="amount">@total.Amount.ToCurrency()</span>
+                </div>
+            </div>
+            <div class="col-md-12 checkout-footer">
+                <div>
+                    @if (shippingAddress != null)
+                    {
+                        <div class="col-md-2 col-sm-6 col-xs-6">
+                            <div class="footer-shipping">
+                                <h4>@Html.Sitecore().Field("Shipping address Label", Html.Sitecore().CurrentItem)</h4>
+                                <ul>
+                                    <li>@shippingAddress.Name</li>
+                                    <li>@shippingAddress.Address1, @shippingAddress.City</li>
+                                    <li>@shippingAddress.State, @shippingAddress.ZipPostalCode</li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    @if (paymentAddress != null)
+                    {
+                        <div class="col-md-2 col-sm-6 col-xs-6">
+                            <div class="footer-billing">
+                                <h4>@Html.Sitecore().Field("Billing address Label", Html.Sitecore().CurrentItem)</h4>
+                                <ul>
+                                    <li>@paymentAddress.Name</li>
+                                    <li>@paymentAddress.Address1, @paymentAddress.City</li>
+                                    <li>@paymentAddress.State, @paymentAddress.ZipPostalCode</li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    @if (payments != null && payments.Count > 0)
+                    {
+                        <div class="col-md-2 col-sm-6 col-xs-6">
+                            <div class="footer-payment">
+                                <h4>@Html.Sitecore().Field("Payments Label", Html.Sitecore().CurrentItem)</h4>
+                                <ul>
+                                    @foreach (PaymentInfo paymentInfo in payments)
+                                    {
+                                        <li><a href="#">@paymentInfo.PaymentMethodID</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

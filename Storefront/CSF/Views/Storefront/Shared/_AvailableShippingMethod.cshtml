@@ -1,0 +1,40 @@
+﻿@using Sitecore.Commerce.Connect.DynamicsRetail.Models
+@using Sitecore.ContentSearch.Linq
+@model CommerceShippingMethod
+@{
+    List<CommerceShippingMethod> shippingMethods = ViewBag.ShippingMethods;
+    List<CommerceShippingMethodPerItem> linesShippingMethods = ViewBag.LineShippingMethods;
+}
+
+@if (shippingMethods != null && shippingMethods.Any())
+{
+    <ul>
+        @foreach (var shippingMethod in shippingMethods)
+        {
+            var check = (Model != null && !string.IsNullOrEmpty(Model.ExternalId) && Model.ExternalId.Equals(shippingMethod.ExternalId));
+            <li>
+                <input type="radio" name="shippingMethodId" id="shippingMethod_@shippingMethod.ExternalId" value="@shippingMethod.ExternalId" checked="@check" data-ajax-name="@shippingMethod.Description" />
+                <label for="shippingMethod_@shippingMethod.ExternalId">
+                    @shippingMethod.Description
+                </label>
+            </li>
+        }
+    </ul>
+}
+else if (linesShippingMethods != null && linesShippingMethods.Any())
+{
+    <ul class="unstyled">
+        @foreach (CommerceShippingMethodPerItem lineShippingMethod in linesShippingMethods)
+        {
+            foreach (CommerceShippingMethod shippingMethod in lineShippingMethod.ShippingMethods)
+            {
+                <li class="row" style="margin-left: 5px;">
+                    <input type="radio" name="lineShippingMethodId-@lineShippingMethod.LineId" id="lineShippingMethod-@lineShippingMethod.LineId" value="@shippingMethod.ExternalId" class="pull-left" data-ajax-name="@shippingMethod.Description" />
+                    <label for="lineShippingMethod-@lineShippingMethod.LineId">
+                        @shippingMethod.Description
+                    </label>
+                </li>
+            }
+        }
+    </ul>
+}

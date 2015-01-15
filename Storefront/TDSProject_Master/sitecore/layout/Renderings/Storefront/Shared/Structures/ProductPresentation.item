@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {750A88C0-47FA-40D9-8B74-5D257EDE845B}
+database: master
+path: /sitecore/layout/Renderings/Storefront/Shared/Structures/ProductPresentation
+parent: {C3327E97-D26A-44B7-8B46-C828E87088D2}
+name: ProductPresentation
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 62
+
+/Views/Storefront/Shared/Structures/ProductPresentation.cshtml
+----field----
+field: {36E3E51C-5E13-4938-A07A-0DBD877A5640}
+name: Form Controller Name
+key: form controller name
+content-length: 0
+
+
+----field----
+field: {8FC23A62-6B1F-4B6A-B910-30D38DF54617}
+name: Form Controller Action
+key: form controller action
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: eafe30e0-7405-45bb-9a0e-3cd72ca4f714
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20141023T063310
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eafe30e0-7405-45bb-9a0e-3cd72ca4f714
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20141117T023836:635517887165412561
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

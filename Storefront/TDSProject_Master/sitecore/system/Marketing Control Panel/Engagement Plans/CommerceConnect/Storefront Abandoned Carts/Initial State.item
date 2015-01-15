@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {442DBE54-500B-4596-A323-466C25BED78E}
+database: master
+path: /sitecore/system/Marketing Control Panel/Engagement Plans/CommerceConnect/Storefront Abandoned Carts/Initial State
+parent: {623BFE7E-A454-42B5-911D-CF1F9AA67B00}
+name: Initial State
+master: {8C90E12F-4E2E-4E3D-9137-B2D5F5DD40C0}
+template: {8CE2707A-3742-4A89-933B-065E5BE02BC9}
+templatekey: Engagement Plan State
+
+----field----
+field: {07CE07CB-078C-415E-8F92-96690BABD6C7}
+name: Time interval
+key: time interval
+content-length: 4
+
+1440
+----field----
+field: {3F72BC07-DE92-483E-A724-D430769D9BA4}
+name: Designer ID
+key: designer id
+content-length: 36
+
+845adc55-eb2e-4dbc-ae16-4b4f4f9ac581
+----field----
+field: {7642ED71-348B-4B88-8634-CC7B28949472}
+name: Origin ID
+key: origin id
+content-length: 36
+
+00000000-0000-0000-0000-000000000000
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 43d865b7-94a9-4d4b-8b2a-3c75c80426a1
+
+----field----
+field: {8C980A06-4059-4939-9C6F-A10F751CEB64}
+name: Description
+key: description
+content-length: 112
+
+Email notifications will be sent to all customers in this state with non-empty carts when the time will run out.
+----field----
+field: {06F2D72A-1924-4B9A-BA1E-186CE4E57EFD}
+name: Description
+key: description
+content-length: 112
+
+Email notifications will be sent to all customers in this state with non-empty carts when the time will run out.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140325T105612
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 17
+
+default\Anonymous
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+43d865b7-94a9-4d4b-8b2a-3c75c80426a1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140325T105612:635313417724235935
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 17
+
+default\Anonymous

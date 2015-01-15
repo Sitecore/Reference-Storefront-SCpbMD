@@ -1,0 +1,30 @@
+﻿@{
+    var orderTotalHeaderLabel = Html.Sitecore().Field("Order Total Header Label", Html.Sitecore().CurrentItem);
+    var paymentTotalLabel = Html.Sitecore().Field("Payment Total Label", Html.Sitecore().CurrentItem);
+    var vatLabel = Html.Sitecore().Field("VAT Label", Html.Sitecore().CurrentItem);
+    var orderTotalLabel = Html.Sitecore().Field("Order Total Label", Html.Sitecore().CurrentItem);
+    var totalSavingsLabel = Html.Sitecore().Field("Total Savings Label", Html.Sitecore().CurrentItem);
+}
+
+<div data-binding="visible: total > 0" id="summarySection">
+    <div class="col-md-12">
+        <h3>@orderTotalHeaderLabel</h3>
+    </div>
+    <div class="col-md-12 summary">
+        <span class="text">@paymentTotalLabel</span>
+        <span class="amount" data-bind="text: subTotal" />
+    </div>
+    <div class="col-md-12 summary">
+        <span class="text">@vatLabel</span>
+        <span class="amount" data-bind="text: taxTotal" />
+    </div>
+    <div class="col-md-12 total">
+        <span class="text">@orderTotalLabel</span>
+        <span class="amount" data-bind="text: total" />
+    </div>
+
+    <div class="col-md-12 discounttotal">
+        <span>@totalSavingsLabel </span>
+        <span id="OrderLevelDiscount" data-bind="text: discount" />
+    </div>
+</div>

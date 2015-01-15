@@ -1,0 +1,62 @@
+﻿@using Sitecore.Commerce.Storefront.Managers
+<div class="col-md-12">
+    <h2>
+        @Html.Sitecore().Field("WishList Title", Html.Sitecore().CurrentItem)
+        <a href="@StorefrontManager.StorefrontUri("/accountmanagement/mywishlists")" class="view-all pull-right">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> @Html.Sitecore().Field("View All Label", Html.Sitecore().CurrentItem)
+        </a>
+    </h2>
+    <div id="wishListsSection">
+        <div class="table-responsive" data-bind="visible: isNotEmpty" id="wishLists">
+            <table class="table table-hover small-list">
+                <thead>
+                    <tr>
+                        <td width="80%">@Html.Sitecore().Field("Name Label", Html.Sitecore().CurrentItem)</td>
+                        <td width="10%">&nbsp;</td>
+                        <td width="10%">&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: WishLists">
+                    <tr data-bind="css: {'odd': $index() % 2 == 0}">
+                        <td>
+                            <a data-bind="attr: {href: DetailsUrl}, text: Name"></a>
+                        </td>
+                        <td>
+                            <span data-bind="visible: IsFavorite == true" class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        </td>
+                        <td><a data-bind="attr: {href: DetailsUrl}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-bind="visible: isEmpty" id="wishListsEmpty">
+            @Html.Sitecore().Field("WishList Empty Text", Html.Sitecore().CurrentItem)
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newWishList">@Html.Sitecore().Field("Create New Wishlist Button", Html.Sitecore().CurrentItem)</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="newWishList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create New Wish List</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="wishlist-name">Wish List Name</label>
+                    <input type="text" class="form-control" id="wishlist-name" placeholder="New Wish List">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="createWishList()" id="createWishList" disabled="disabled">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="createWishListClose">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    initWishLists("wishListsSection");
+</script>

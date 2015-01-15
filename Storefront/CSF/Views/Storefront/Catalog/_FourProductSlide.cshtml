@@ -1,0 +1,24 @@
+﻿@model ProductSearchResults
+@using System.Linq;
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+    @{
+
+        for (int i = 0; i < Model.Products.Count; i += 4)
+        {
+            <div class="item@(i == 0 ? " active" : "")">
+                <div class="row">
+                    @foreach (Item product in Model.Products.Skip(i).Take(4))
+                    {
+                        var productModel = new ProductViewModel(product);
+                        productModel.Initialize(Model.Rendering);
+
+                        <div class="col-sm-3 col-xs-6">
+                            @Html.Partial("~/Views/Storefront/Catalog/_ProductSummary.cshtml", productModel)
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>

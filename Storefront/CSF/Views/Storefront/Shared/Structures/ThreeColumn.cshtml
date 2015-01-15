@@ -1,0 +1,24 @@
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    int centerWidth = 6;
+    int.TryParse(Model.Rendering.Parameters["Center Width"], out centerWidth);
+    int leftWidth = 3;
+    int.TryParse(Model.Rendering.Parameters["Left Width"], out leftWidth);
+    int rightWidth = 3;
+    int.TryParse(Model.Rendering.Parameters["Right Width"], out rightWidth);
+
+    bool isValidTotal = centerWidth + leftWidth + rightWidth == 12 ? true : false;
+}
+
+<div id="S04-ThreeColumn" class="row">
+    <div class="col-md-@(isValidTotal ? leftWidth : 3)">
+        @Html.Sitecore().Placeholder("left")
+    </div>
+    <div class="col-md-@(isValidTotal ? centerWidth : 6)">
+        @Html.Sitecore().Placeholder("center")
+    </div>
+    <div class="col-md-@(isValidTotal ? rightWidth : 3)">
+        @Html.Sitecore().Placeholder("right")
+    </div>
+</div>

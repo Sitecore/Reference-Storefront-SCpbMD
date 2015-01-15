@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {D3D116FC-D10A-4C9F-AB80-8CCAC1184BC9}
+database: master
+path: /sitecore/Commerce/Commerce Extensions/Commerce Models/Models/CustomerProductRatings/Rating
+parent: {8B188EC4-694D-452D-98B2-9D0C1204851F}
+name: Rating
+master: {00000000-0000-0000-0000-000000000000}
+template: {030E76BD-913C-4066-B0D9-2461333425BF}
+templatekey: Commerce Model Property
+
+----version----
+language: en
+version: 1
+revision: 8c50db5f-6564-49eb-807a-cf75865de357
+
+----field----
+field: {B49691B9-B772-4530-A025-E48AD8952C7B}
+name: Data Type
+key: data type
+content-length: 6
+
+string
+----field----
+field: {7957E6E2-59BF-4441-9C34-A11C04EFEA0B}
+name: NativeName
+key: nativename
+content-length: 6
+
+Rating
+----field----
+field: {CFBAF573-8EA5-495D-9F23-24AF2017F238}
+name: MaxValue
+key: maxvalue
+content-length: 4
+
+4000
+----field----
+field: {7AC75060-98DE-4214-BE90-7797DE3CED1D}
+name: MinValue
+key: minvalue
+content-length: 1
+
+0
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140816T183249
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+8c50db5f-6564-49eb-807a-cf75865de357
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140816T204013:635438184135479357
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

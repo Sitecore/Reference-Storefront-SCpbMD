@@ -1,0 +1,15 @@
+﻿@model ProductViewModel
+
+<div id="C11-ProductInformation">
+    <div class="col-md-12 col-xs-12"><h1>@Model.DisplayNameRender</h1></div>
+    <div class="col-md-12 col-xs-12"><p>@Html.Sitecore().Field("Item number", Model.Rendering.RenderingItem) @Model.RenderField("ItemNumber")</p></div>
+    <div class="col-md-12 col-xs-12">
+        <div class="description">
+            <h6>@Html.Sitecore().Field("Description", Model.Rendering.RenderingItem)</h6>
+            <p>@Model.DescriptionRender</p>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="prod-variants-close"></div>
+    </div>
+</div>

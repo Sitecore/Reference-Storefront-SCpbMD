@@ -1,0 +1,10 @@
+﻿@using Sitecore.Commerce.Storefront.Managers
+@model SearchBarModel
+
+<div id="B03-SearchBar" class="search-bar">
+    <div class="input-group">
+        <form class="navbar-search pull-left" action="~/search" method="get" id="SearchForm">
+            <input type="search" class="search-query" placeholder="Search" name="@Sitecore.Commerce.Storefront.Constants.QueryStrings.SearchKeyword" value="@Model.SearchKeyword" />
+        </form>
+    </div>
+</div>
