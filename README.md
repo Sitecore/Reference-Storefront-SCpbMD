@@ -1,6 +1,9 @@
 # Reference-Storefront-SCpbMD
 Sitecore Reference Storefront powered by Microsoft Dynamics
 
+NOTE: THIS VERSION OF THE SITECORE REFERENCE STOREFRONT IS BEING DEPRECATED AND REPLACED.
+      TO ACCESS THE LATEST VERSION, GO TO [REFERENCE STOREFRONT] (https://github.com/Sitecore/Reference-Storefront)
+
 Copyright 2015 Sitecore Corporation A/S 
 
 Licensed under the Apache License, Version 2.0 (the "License");  
